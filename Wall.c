@@ -10,16 +10,24 @@
 //! @return  壁オブジェクト / 生成失敗時NULLを返す
 //!
 Wall* Wall_New(
-    DrawObject* drawObj)
+    DrawObject* drawObj,                //!< [I]thisポインタ
+    int32_t     width,                  //!< [I]幅
+    int32_t     height)                 //!< [I]高さ
 {
-    Wall* this = (Wall*)malloc(sizeof(Wall));
-    if (this == NULL || drawObj == NULL)
+    if(drawObj == NULL)
     {
         return NULL;
     }
 
-    this->Width   = 22;
-    this->Height  = 22;
+    Wall* this = (Wall*)malloc(sizeof(Wall));
+    if (this == NULL )
+    {
+        return NULL;
+    }
+
+    // 壁の幅/高さを設定　フロアを囲うため、+2している
+    this->Width   = width + 2;
+    this->Height  = height + 2;
     this->DrawObj = drawObj;
     this->Show = Wall_Show;
     return this;
@@ -31,7 +39,7 @@ Wall* Wall_New(
 //! @return  無し
 //!
 void Wall_Delete(
-    Wall* this)
+    Wall* this)                         //!< [I]thisポインタ
 {
     if (this == NULL)
     {
@@ -45,7 +53,8 @@ void Wall_Delete(
 //! @details １行開けて、Width / Height 範囲で壁を描画する
 //! @return  無し
 //!
-void Wall_Show(Wall* this)
+void Wall_Show(
+    Wall* this)                         //!< [I]thisポインタ
 {
     if ( (this == NULL) || 
          (this->DrawObj == NULL) || 

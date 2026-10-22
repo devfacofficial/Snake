@@ -12,7 +12,7 @@ typedef struct Wall
     void (*Show)(struct Wall* this);
 } Wall;
 
-Wall* Wall_New(DrawObject* drawObj);
+Wall* Wall_New(DrawObject* drawObj,int32_t width, int32_t height);
 void  Wall_Delete(Wall* this);
 void  Wall_Show(Wall* this);
 
