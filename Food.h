@@ -10,13 +10,15 @@ typedef struct Food
     int32_t Height;
     int32_t X;
     int32_t Y;
+    int32_t OfstX;
+    int32_t OfstY;
     DrawObject* DrawObj;
     void (*Arrival)(struct Food* this);
     void (*Draw)(struct Food* this);
     void (*Disappear)(struct Food* this);
 } Food;
 
-Food* Food_New(DrawObject* drawObj, int32_t width, int32_t height);
+Food* Food_New(DrawObject* drawObj, int32_t width, int32_t height, int32_t ofstx, int32_t ofsty);
 void  Food_Delete(Food* this);
 void  Food_Arrival(Food* this);
 void  Food_Draw(Food* this);

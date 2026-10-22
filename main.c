@@ -46,7 +46,7 @@ int main(void)
         goto END;
     }
 
-    food = Food_New(drawObject,20,20);
+    food = Food_New(drawObject,20,20, 1, 2);
     if(food == NULL)
     {
         ShowErrorMsg(__LINE__, (const int8_t*)__func__);

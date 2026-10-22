@@ -13,7 +13,9 @@
 Food* Food_New(
     DrawObject* drawObj,                //!< [I]描画オブジェクト
     int32_t     width,                  //!< [I]幅
-    int32_t     height)                 //!< [I]高さ
+    int32_t     height,                 //!< [I]高さ
+    int32_t     ofstx,                  //!< [I]えさ位置のオフセットX
+    int32_t     ofsty)                  //!< [I]えさ位置のオフセットY
 {
     if (drawObj == NULL || width <= 0 || height <= 0)
     {
@@ -28,6 +30,8 @@ Food* Food_New(
 
     this->Width     = width;
     this->Height    = height;
+    this->OfstX     = ofstx;
+    this->OfstY     = ofsty;
     this->X         = -1;
     this->Y         = -1;
     this->DrawObj   = drawObj;
@@ -68,8 +72,8 @@ void Food_Arrival(
     }
 
     // 壁とスコアの表示を考慮し、X+1, Y+2 する
-    this->X = (rand() % this->Width) + 1;
-    this->Y = (rand() % this->Height) + 2;
+    this->X = (rand() % this->Width)  + this->OfstX;
+    this->Y = (rand() % this->Height) + this->OfstY;
 }
 
 //-----------------------------------------------------------------------------
