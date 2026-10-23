@@ -3,6 +3,7 @@
 #include "DrawObject.h"
 #include "Wall.h"
 #include "Food.h"
+#include "Snake.h"
 
 void ShowErrorMsg(uint32_t line, const int8_t* func);
 
@@ -30,6 +31,7 @@ int main(void)
     DrawObject* drawObject = NULL;
     Wall* wall = NULL;
     Food* food = NULL;
+    Snake* snake = NULL;
 
     // 初期化
     drawObject = DrawObject_New();
@@ -53,8 +55,18 @@ int main(void)
         goto END;
     }
 
+    snake = Snake_New(drawObject, 20, 20, 1, 2);
+    if(food == NULL)
+    {
+        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
+        goto END;
+    }
+
     // 壁表示
     wall->Show(wall);
+
+    // へび表示
+    snake->Draw(snake);
 
     // えさ表示
     food->Arrival(food);

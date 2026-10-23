@@ -4,7 +4,7 @@ LDFLAGS ?=
 LDLIBS ?= -lm
 
 TARGET = snake.exe
-OBJECTS = main.o DrawObject.o Wall.o Food.o
+OBJECTS = main.o DrawObject.o Wall.o Food.o Snake.o
 
 .PHONY: all clean
 
@@ -24,6 +24,9 @@ wall.o: wall.c
 
 Food.o: Food.c
 	$(CC) $(CFLAGS) -c -o $@ Food.c
+
+Snake.o: Snake.c Snake.h
+	$(CC) $(CFLAGS) -c -o $@ Snake.c
 
 clean:
 	$(RM) $(OBJECTS) $(TARGET)
