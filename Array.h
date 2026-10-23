@@ -42,7 +42,7 @@
     typedef struct Type##ArrayIterator Type##ArrayIterator; \
     static inline bool Type##Array##_Push(Type##Array* array, Type* value); \
     static inline void Type##Array##_Clear(Type##Array* array); \
-    static inline const Type* Type##ArrayIterator##_Next(Type##ArrayIterator* iterator); \
+    static inline Type* Type##ArrayIterator##_Next(Type##ArrayIterator* iterator); \
     \
     struct Type##Array \
     { \
@@ -55,9 +55,9 @@
     \
     typedef struct Type##ArrayIterator \
     { \
-        const Type##Array* Array; \
+        Type##Array* Array; \
         size_t Index; \
-        const Type* (*Next)(Type##ArrayIterator* this); \
+        Type* (*Next)(Type##ArrayIterator* this); \
     } Type##ArrayIterator; \
     \
     static inline Type##Array* Type##Array##_New(void) \
@@ -121,13 +121,13 @@
         } \
     } \
     \
-    static inline Type##ArrayIterator Type##Array##_Iterator(const Type##Array* array) \
+    static inline Type##ArrayIterator Type##Array##_Iterator(Type##Array* array) \
     { \
         Type##ArrayIterator iterator = { array, 0, Type##ArrayIterator##_Next }; \
         return iterator; \
     } \
     \
-    static inline const Type* Type##ArrayIterator##_Next(Type##ArrayIterator* iterator) \
+    static inline Type* Type##ArrayIterator##_Next(Type##ArrayIterator* iterator) \
     { \
         if (iterator == NULL || iterator->Array == NULL || \
             iterator->Index >= iterator->Array->Length) \

@@ -65,12 +65,16 @@ int main(void)
     // 壁表示
     wall->Show(wall);
 
-    // へび表示
-    snake->Draw(snake);
-
     // えさ表示
     food->Arrival(food);
     food->Draw(food);
+
+    while(1)
+    {
+        // へび表示
+        snake->Move(snake);
+        Sleep(250);
+    }
     
 END:
     if(wall != NULL)Wall_Delete(wall);
