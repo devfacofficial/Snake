@@ -28,35 +28,17 @@ Snake* Snake_New(
         return NULL;
     }
 
-    this->Body = PosArray_New();
-    if (this->Body == NULL)
-    {
-        free(this);
-        return NULL;
-    }
-
     this->Width           = width;
     this->Height          = height;
     this->OfstX           = ofstx;
     this->OfstY           = ofsty;
-    this->X               = -1;
-    this->Y               = -1;
     this->Direction       = RIGHT;
     this->IsCollisionFood = false;
     this->IsCollisionWall = false;
     this->DrawObj         = drawObj;
+    this->Body            = NULL;
+    this->Init            = Snake_Init;
     this->Move            = Snake_Move;
-
-    // へびの初期状態を設定
-    int32_t x = 4 + this->OfstX;
-    int32_t y = (this->Height / 2) + this->OfstY;
-    Snake_AddBody(this, x, y);
-    x--;
-    Snake_AddBody(this, x, y);
-    x--;
-    Snake_AddBody(this, x, y);
-    x--;
-    Snake_AddBody(this, x, y);
     return this;
 }
 
@@ -75,6 +57,47 @@ void Snake_Delete(
 
     PosArray_Delete(this->Body);
     free(this);
+}
+
+//-----------------------------------------------------------------------------
+//! @brief   初期化
+//! @details 無し
+//! @return  無し
+//!
+void Snake_Init(
+    Snake* this)                        //!< [I]thisポインタ
+{
+    if (this == NULL)
+    {
+        return;
+    }
+
+    if(this->Body != NULL)
+    {
+        PosArray_Delete(this->Body);
+        this->Body = NULL;
+    }
+
+    this->Body = PosArray_New();
+    if (this->Body == NULL)
+    {
+        free(this);
+    }
+
+    this->Direction       = RIGHT;
+    this->IsCollisionFood = false;
+    this->IsCollisionWall = false;
+
+    // へびの初期状態を設定
+    int32_t x = 4 + this->OfstX;
+    int32_t y = (this->Height / 2) + this->OfstY;
+    Snake_AddBody(this, x, y);
+    x--;
+    Snake_AddBody(this, x, y);
+    x--;
+    Snake_AddBody(this, x, y);
+    x--;
+    Snake_AddBody(this, x, y);
 }
 
 //-----------------------------------------------------------------------------

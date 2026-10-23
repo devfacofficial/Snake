@@ -25,8 +25,6 @@ typedef struct Snake
 {
     int32_t         Width;
     int32_t         Height;
-    int32_t         X;
-    int32_t         Y;
     int32_t         OfstX;
     int32_t         OfstY;
     SNAKE_DIRECTION Direction;
@@ -34,11 +32,13 @@ typedef struct Snake
     bool            IsCollisionFood;
     DrawObject*     DrawObj;
     PosArray*       Body;
+    void (*Init)(struct Snake* this);
     void (*Move)(struct Snake* this);
 } Snake;
 
 Snake* Snake_New(DrawObject* drawObj, int32_t width, int32_t height, int32_t ofstx, int32_t ofsty);
 void   Snake_Delete(Snake* this);
+void   Snake_Init(Snake* this);
 void   Snake_Move(Snake* this);
 void   Snake_ChangeDirection(Snake* this);
 bool   Snake_Collision(Snake* this);

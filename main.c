@@ -62,18 +62,25 @@ int main(void)
         goto END;
     }
 
-    // 壁表示
-    wall->Show(wall);
-
-    // えさ表示
-    food->Arrival(food);
-    food->Draw(food);
-
+    // ゲーム処理
     while(1)
     {
-        // へび表示
-        snake->Move(snake);
-        Sleep(250);
+        // 壁表示
+        wall->Show(wall);
+
+        // えさ表示
+        food->Arrival(food);
+        food->Draw(food);
+
+        // へび初期化
+        snake->Init(snake);
+
+        while(snake->IsCollisionWall == false)
+        {
+            // へび移動
+            snake->Move(snake);
+            Sleep(250);
+        }
     }
     
 END:
