@@ -3,6 +3,7 @@
 #include <inttypes.h>
 #include <stdio.h>
 #include <time.h>
+#include <conio.h>
 
 //-----------------------------------------------------------------------------
 //! @brief   コンストラクタ
@@ -65,7 +66,7 @@ Snake* Snake_New(
 //! @return  無し
 //!
 void Snake_Delete(
-    Snake* this)
+    Snake* this)                        //!< [I]thisポインタ
 {
     if (this == NULL)
     {
@@ -81,9 +82,9 @@ void Snake_Delete(
 //! @return  true:追加成功 false:追加失敗
 //!
 bool Snake_AddBody(
-    Snake* this,
-    int32_t x,
-    int32_t y)
+    Snake* this,                        //!< [I]thisポインタ
+    int32_t x,                          //!< [I]追加位置X
+    int32_t y)                          //!< [I]追加位置Y
 {
     if (this == NULL || this->Body == NULL)
     {
@@ -107,6 +108,14 @@ void Snake_Move(
     Pos* position;
     Pos  bfPosition;
     Pos  nowPosition;
+
+    if (this == NULL)
+    {
+        return;
+    }
+
+    // 方向判定
+    Snake_ChangeDirection(this);
 
     // 衝突判定
     if( Snake_Collision(this) == true)
@@ -135,16 +144,73 @@ void Snake_Move(
 }
 
 //-----------------------------------------------------------------------------
+//! @brief   へび移動方向判定
+//! @details キー入力に応じて方向を変更する
+//! @return  無し
+//!
+void Snake_ChangeDirection(
+    Snake* this)                        //!< [I]thisポインタ
+{
+    if (this == NULL || !_kbhit())
+    {
+        return;
+    }
+
+    int key = _getch();
+    SNAKE_DIRECTION nextDirection;
+
+    if (key == 0 || key == 0xE0)
+    {
+        switch (_getch())
+        {
+        case 72: nextDirection = UP;    break; // 上
+        case 80: nextDirection = DOWN;  break; // 下
+        case 75: nextDirection = LEFT;  break; // 左
+        case 77: nextDirection = RIGHT; break; // 右
+        default: return;
+        }
+    }
+    else
+    {
+        switch (key)
+        {
+        case '8': nextDirection = UP;    break;
+        case '2': nextDirection = DOWN;  break;
+        case '4': nextDirection = LEFT;  break;
+        case '6': nextDirection = RIGHT; break;
+        default: return;
+        }
+    }
+
+    // 進行方向と正反対には曲がれないようにする
+    if ((this->Direction == UP    && nextDirection == DOWN)  ||
+        (this->Direction == DOWN  && nextDirection == UP)    ||
+        (this->Direction == LEFT  && nextDirection == RIGHT) ||
+        (this->Direction == RIGHT && nextDirection == LEFT))
+    {
+        return;
+    }
+
+    this->Direction = nextDirection;
+}
+
+//-----------------------------------------------------------------------------
 //! @brief   衝突判定
 //! @details 壁、体との衝突を判定する
 //! @return  無し
 //!
-bool Snake_Collision(Snake* this)
+bool Snake_Collision(
+    Snake* this)                        //!< [I]thisポインタ
 {
     bool isTop = true;
     PosArrayIterator iterator = PosArray_Iterator(this->Body);
     Pos* position;
     Pos  headPosition;
+
+    if (this == NULL)
+    {
+        return false;
+    }
 
     while ((position = iterator.Next(&iterator)) != NULL)
     {
@@ -157,10 +223,10 @@ bool Snake_Collision(Snake* this)
         if(isTop == true)
         {
             Snake_GetNextHeadPos(this, &headPosition);
-            if( (headPosition.X >= (this->Width + this->OfstX - 1)  ||
-                (headPosition.X <= (this->OfstX)                    ||
-                (headPosition.Y >= (this->Height + this->OfstY - 1) ||
-                (headPosition.Y <= (this->OfstY)                       )
+            if( (headPosition.X > (this->Width + this->OfstX - 1))  ||
+                (headPosition.X < (this->OfstX))                    ||
+                (headPosition.Y > (this->Height + this->OfstY - 1)) ||
+                (headPosition.Y < (this->OfstY))                       )
             {
                 this->IsCollisionWall = true;
             }
@@ -183,11 +249,16 @@ bool Snake_Collision(Snake* this)
 //! @return  true:成功  false:失敗
 //!
 bool Snake_GetNextHeadPos(
-    Snake* this,
-    Pos*   pNextHead)
+    Snake* this,                        //!< [I]thisポインタ
+    Pos*   pNextHead)                   //!< [O]次回頭位置
 {
     bool rslt = false;
     Pos nextHead = this->Body->Data[0];
+
+    if( (this == NULL) || (pNextHead == NULL) )
+    {
+        return false;
+    }
 
     switch(this->Direction)
     {
@@ -200,11 +271,11 @@ bool Snake_GetNextHeadPos(
         rslt = true;
         break;
     case UP:
-        nextHead.Y += 1;
+        nextHead.Y -= 1;
         rslt = true;
         break;
     case DOWN:
-        nextHead.Y -= 1;
+        nextHead.Y += 1;
         rslt = true;
         break;
     default:
