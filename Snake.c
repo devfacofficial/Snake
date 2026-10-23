@@ -95,7 +95,7 @@ bool Snake_AddBody(
 }
 
 //-----------------------------------------------------------------------------
-//! @brief   へび登場
+//! @brief   へび移動
 //! @details へびを頭の方角に移動
 //! @return  無し
 //!
@@ -119,23 +119,7 @@ void Snake_Move(
         if(isTop == true)
         {
             bfPosition  = *position;
-            switch(this->Direction)
-            {
-            case RIGHT:
-                position->X += 1;
-                break;
-            case LEFT:
-                position->X -= 1;
-                break;
-            case UP:
-                position->Y += 1;
-                break;
-            case DOWN:
-                position->Y -= 1;
-                break;
-            default:
-            }
-
+            Snake_GetNextHeadPos(this, position);
             this->DrawObj->PutChar(this->DrawObj, position->X, position->Y, '@');
             isTop = false;
         }
@@ -172,37 +156,13 @@ bool Snake_Collision(Snake* this)
         // 壁衝突判定
         if(isTop == true)
         {
-            headPosition = *position;
-            switch(this->Direction)
+            Snake_GetNextHeadPos(this, &headPosition);
+            if( (headPosition.X >= (this->Width + this->OfstX - 1)  ||
+                (headPosition.X <= (this->OfstX)                    ||
+                (headPosition.Y >= (this->Height + this->OfstY - 1) ||
+                (headPosition.Y <= (this->OfstY)                       )
             {
-            case RIGHT:
-                headPosition.X += 1;
-                if(headPosition.X >= (this->Width + this->OfstX - 1))
-                {
-                    this->IsCollisionWall = true;
-                }
-                break;
-            case LEFT:
-                headPosition.X -= 1;
-                if(headPosition.X <= this->OfstX)
-                {
-                    this->IsCollisionWall = true;
-                }
-                break;
-            case UP:
-                headPosition.Y += 1;
-                if(headPosition.Y >= (this->Height + this->OfstY - 1))
-                {
-                    this->IsCollisionWall = true;
-                }
-                break;
-            case DOWN:
-                headPosition.Y -= 1;
-                if(headPosition.Y <= this->OfstY)
-                {
-                    this->IsCollisionWall = true;
-                }
-                break;
+                this->IsCollisionWall = true;
             }
         }
         // 体衝突判定
@@ -215,4 +175,45 @@ bool Snake_Collision(Snake* this)
         }
     }
     return this->IsCollisionWall;
+}
+
+//-----------------------------------------------------------------------------
+//! @brief   移動後の頭の位置を取得
+//! @details 無し
+//! @return  true:成功  false:失敗
+//!
+bool Snake_GetNextHeadPos(
+    Snake* this,
+    Pos*   pNextHead)
+{
+    bool rslt = false;
+    Pos nextHead = this->Body->Data[0];
+
+    switch(this->Direction)
+    {
+    case RIGHT:
+        nextHead.X += 1;
+        rslt = true;
+        break;
+    case LEFT:
+        nextHead.X -= 1;
+        rslt = true;
+        break;
+    case UP:
+        nextHead.Y += 1;
+        rslt = true;
+        break;
+    case DOWN:
+        nextHead.Y -= 1;
+        rslt = true;
+        break;
+    default:
+        rslt = false;
+    }
+
+    if(rslt == true)
+    {
+        *pNextHead = nextHead;
+    }
+    return rslt;
 }

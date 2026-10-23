@@ -43,5 +43,5 @@ void   Snake_Move(Snake* this);
 void   Snake_ChangeDirection(Snake* this);
 bool   Snake_Collision(Snake* this);
 bool   Snake_AddBody(Snake* this, int32_t x, int32_t y);
-
+bool   Snake_GetNextHeadPos(Snake* this, Pos* pNextHead);
 #endif
