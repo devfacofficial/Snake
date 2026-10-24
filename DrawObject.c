@@ -27,10 +27,13 @@ DrawObject* DrawObject_New(void)
         return NULL;
     }
 
+    this->IsCursorHidden = false;
     this->Output    = output;
     this->PutChar   = DrawObject_PutChar;
     this->PutStr    = DrawObject_PutStr;
     this->GetCenter = DrawObject_GetCenter;
+    this->HideCursor = DrawObject_HideCursor;
+    this->RestoreCursor = DrawObject_RestoreCursor;
     return this;
 }
 
@@ -39,7 +42,64 @@ DrawObject* DrawObject_New(void)
 //!
 void DrawObject_Delete(DrawObject* this)
 {
+    if (this != NULL && this->IsCursorHidden)
+    {
+        DrawObject_RestoreCursor(this);
+    }
     free(this);
+}
+
+//-----------------------------------------------------------------------------
+//! @brief   カーソルを非表示にする
+//! @return  成功時true
+//!
+bool DrawObject_HideCursor(DrawObject* this)
+{
+    if (this == NULL)
+    {
+        return false;
+    }
+    if (this->IsCursorHidden)
+    {
+        return true;
+    }
+    if (!GetConsoleCursorInfo(this->Output, &this->CursorInfo))
+    {
+        return false;
+    }
+
+    CONSOLE_CURSOR_INFO hiddenCursorInfo = this->CursorInfo;
+    hiddenCursorInfo.bVisible = FALSE;
+    if (!SetConsoleCursorInfo(this->Output, &hiddenCursorInfo))
+    {
+        return false;
+    }
+
+    this->IsCursorHidden = true;
+    return true;
+}
+
+//-----------------------------------------------------------------------------
+//! @brief   カーソルを非表示にする前の状態に戻す
+//! @return  成功時true
+//!
+bool DrawObject_RestoreCursor(DrawObject* this)
+{
+    if (this == NULL)
+    {
+        return false;
+    }
+    if (!this->IsCursorHidden)
+    {
+        return true;
+    }
+    if (!SetConsoleCursorInfo(this->Output, &this->CursorInfo))
+    {
+        return false;
+    }
+
+    this->IsCursorHidden = false;
+    return true;
 }
 
 //-----------------------------------------------------------------------------

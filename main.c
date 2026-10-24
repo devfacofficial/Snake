@@ -168,7 +168,7 @@ void ShowFood()
     food->Arrival(food);
 
     // えさがへびと重なっていたら、空いてる場所に移動
-    if(screen[food->Y][food->X] == 1)
+    if(screen[food->Y - 2][food->X - 1] == 1)
     {
         for(int x=0; x<SCREEN_WIDTH; x++)
         {
@@ -213,6 +213,11 @@ int main(void)
         goto END;
     }
 
+    if (!drawObject->HideCursor(drawObject))
+    {
+        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
+    }
+
     wall = Wall_New(drawObject,SCREEN_WIDTH,SCREEN_HEIGHT);
     if(wall == NULL)
     {
@@ -228,7 +233,7 @@ int main(void)
     }
 
     snake = Snake_New(drawObject, SCREEN_WIDTH, SCREEN_HEIGHT, 1, 2);
-    if(food == NULL)
+    if(snake == NULL)
     {
         ShowErrorMsg(__LINE__, (const int8_t*)__func__);
         goto END;
@@ -238,6 +243,10 @@ int main(void)
     PlayGame();
 
 END:
+    if (drawObject != NULL && !drawObject->RestoreCursor(drawObject))
+    {
+        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
+    }
     if(wall != NULL)Wall_Delete(wall);
     if(drawObject != NULL)DrawObject_Delete(drawObject);
     return 0;
