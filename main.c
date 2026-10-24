@@ -89,8 +89,8 @@ void PlayGame()
         while( (snake->IsCollisionWall == false) && (!IsStopRequested()) )
         {
             // へび移動
-            snake->Move(snake);
             food->Draw(food);
+            snake->Move(snake);
 
             // 障害物または体に衝突
             if(snake->IsCollisionWall == true)
@@ -112,10 +112,7 @@ void PlayGame()
                 // へびの体を１個追加
                 snake->AddBody(snake, -1, -1);
             }
-            else
-            {
-                Sleep(250);
-            }
+            Sleep(250);
         }
     }
 }
