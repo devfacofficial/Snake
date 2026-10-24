@@ -39,6 +39,7 @@ Snake* Snake_New(
     this->Body            = NULL;
     this->Init            = Snake_Init;
     this->Move            = Snake_Move;
+    this->AddBody         = Snake_AddBody;
     return this;
 }
 
@@ -102,6 +103,7 @@ void Snake_Init(
 
 //-----------------------------------------------------------------------------
 //! @brief   へびの胴体を末尾に追加
+//! @details えさを食べたときは、x=-1, y=-1 を設定すること
 //! @return  true:追加成功 false:追加失敗
 //!
 bool Snake_AddBody(
@@ -163,7 +165,10 @@ void Snake_Move(
             this->DrawObj->PutChar(this->DrawObj, position->X, position->Y, '+');
         }
     }
-    this->DrawObj->PutChar(this->DrawObj, bfPosition.X, bfPosition.Y, ' ');
+    if( (bfPosition.X != -1) || (bfPosition.Y != -1) )
+    {
+        this->DrawObj->PutChar(this->DrawObj, bfPosition.X, bfPosition.Y, ' ');
+    }
 }
 
 //-----------------------------------------------------------------------------
@@ -235,6 +240,7 @@ bool Snake_Collision(
         return false;
     }
 
+    Snake_GetNextHeadPos(this, &headPosition);
     while ((position = iterator.Next(&iterator)) != NULL)
     {
         if(this->IsCollisionWall == true)
@@ -245,14 +251,15 @@ bool Snake_Collision(
         // 壁衝突判定
         if(isTop == true)
         {
-            Snake_GetNextHeadPos(this, &headPosition);
             if( (headPosition.X > (this->Width + this->OfstX - 1))  ||
                 (headPosition.X < (this->OfstX))                    ||
                 (headPosition.Y > (this->Height + this->OfstY - 1)) ||
                 (headPosition.Y < (this->OfstY))                       )
             {
                 this->IsCollisionWall = true;
+                break;
             }
+            isTop = false;
         }
         // 体衝突判定
         else
@@ -260,6 +267,7 @@ bool Snake_Collision(
             if( (position->X == headPosition.X) && (position->Y == headPosition.Y) )
             {
                 this->IsCollisionWall = true;
+                break;
             }
         }
     }

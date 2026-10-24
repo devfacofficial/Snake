@@ -34,6 +34,7 @@ typedef struct Snake
     PosArray*       Body;
     void (*Init)(struct Snake* this);
     void (*Move)(struct Snake* this);
+    bool (*AddBody)(struct Snake* this, int32_t x, int32_t y);
 } Snake;
 
 Snake* Snake_New(DrawObject* drawObj, int32_t width, int32_t height, int32_t ofstx, int32_t ofsty);

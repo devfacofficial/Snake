@@ -6,8 +6,8 @@
 #include "Food.h"
 #include "Snake.h"
 
-#define SCREEN_WIDTH  40
-#define SCREEN_HEIGHT 20
+#define SCREEN_WIDTH  20
+#define SCREEN_HEIGHT 10
 
 DrawObject* drawObject = NULL;
 Wall* wall             = NULL;
@@ -68,6 +68,9 @@ void PlayGame()
                 // えさ表示
                 food->Arrival(food);
                 food->Draw(food);
+
+                // へびの体を１個追加
+                snake->AddBody(snake, -1, -1);
             }
             else
             {
