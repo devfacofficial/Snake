@@ -15,22 +15,23 @@ DrawObject* DrawObject_New(void)
         return NULL;
     }
 
-    DrawObject* drawObject = malloc(sizeof *drawObject);
-    if (drawObject == NULL)
+    DrawObject* this = malloc(sizeof *this);
+    if (this == NULL)
     {
         return NULL;
     }
 
-    if (!GetConsoleScreenBufferInfo(output, &drawObject->Info))
+    if (!GetConsoleScreenBufferInfo(output, &this->Info))
     {
-        free(drawObject);
+        free(this);
         return NULL;
     }
 
-    drawObject->Output = output;
-    drawObject->PutChar = DrawObject_PutChar;
-    drawObject->GetCenter = DrawObject_GetCenter;
-    return drawObject;
+    this->Output    = output;
+    this->PutChar   = DrawObject_PutChar;
+    this->PutStr    = DrawObject_PutStr;
+    this->GetCenter = DrawObject_GetCenter;
+    return this;
 }
 
 //-----------------------------------------------------------------------------
@@ -73,6 +74,33 @@ bool DrawObject_PutChar(
 
     DWORD written = 0;
     return WriteConsoleA(this->Output, &ch, 1, &written, NULL) && (written == 1);
+}
+
+//-----------------------------------------------------------------------------
+//! @brief   指定位置に文字列を描画する
+//! @details 無し
+//! @return  成功時true
+//!
+bool DrawObject_PutStr(
+    DrawObject* this,
+    int32_t x,
+    int32_t y,
+    const char* str)
+{
+    if (this == NULL)
+    {
+        return false;
+    }
+
+    COORD position = { (SHORT)x, (SHORT)y };
+    if (!SetConsoleCursorPosition(this->Output, position))
+    {
+        return false;
+    }
+
+    DWORD written = 0;
+    DWORD length = (DWORD)strlen(str);
+    return WriteConsoleA(this->Output, str, length, &written, NULL) && (written == 1);
 }
 
 //-----------------------------------------------------------------------------

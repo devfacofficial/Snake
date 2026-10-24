@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <conio.h>
 #include "DrawObject.h"
 #include "Wall.h"
 #include "Food.h"
@@ -79,7 +80,23 @@ int main(void)
         {
             // へび移動
             snake->Move(snake);
-            Sleep(250);
+
+            // 障害物または体に衝突
+            if(snake->IsCollisionWall == true)
+            {
+                drawObject->PutStr(drawObject,1, 9,"                    ");
+                drawObject->PutStr(drawObject,1,10,"     GAME OVER!     ");
+                drawObject->PutStr(drawObject,1,11,"    HIT ANY KEY!    ");
+                drawObject->PutStr(drawObject,1,12,"                    ");
+                while(_getch())
+                {
+                    break;
+                }
+            }
+            else
+            {
+                Sleep(250);
+            }
         }
     }
     
