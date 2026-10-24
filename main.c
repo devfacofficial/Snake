@@ -14,6 +14,7 @@ Wall* wall             = NULL;
 Food* food             = NULL;
 Snake* snake           = NULL;
 int32_t score          = 0;
+bool stopRequested     = false;
 
 void ShowErrorMsg(uint32_t line, const int8_t* func);
 void PlayGame();
@@ -21,6 +22,8 @@ bool IsEat();
 void ShowFood();
 void ShowGameoverMsg();
 void ShowScore();
+BOOL WINAPI HandleConsoleControl(DWORD controlType);
+bool IsStopRequested(void);
 
 //-----------------------------------------------------------------------------
 //! @brief   エラーメッセージ表示
@@ -36,6 +39,30 @@ void ShowErrorMsg(
     fputs((char*)msg, stderr);
 }
 
+//-----------------------------------------------------------------------------
+//! @brief   Ctrl+c 割り込みハンドラ
+//! @details Ctrl+c 押下時、フラグをONにする
+//! @return  true: 割り込み有り  false:割り込み無し
+//!
+BOOL WINAPI HandleConsoleControl(DWORD controlType)
+{
+    if (controlType == CTRL_C_EVENT || controlType == CTRL_BREAK_EVENT)
+    {
+        stopRequested = true;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+//-----------------------------------------------------------------------------
+//! @brief   Ctrl+c 割り込み有り
+//! @details 無し
+//! @return  true: 割り込み有り  false:割り込み無し
+//!
+bool IsStopRequested(void)
+{
+    return stopRequested;
+}
 
 //-----------------------------------------------------------------------------
 //! @brief   ゲーム処理
@@ -44,7 +71,7 @@ void ShowErrorMsg(
 //!
 void PlayGame()
 {
-    while(1)
+    while(!IsStopRequested())
     {
         // 壁表示
         wall->Show(wall);
@@ -59,7 +86,7 @@ void PlayGame()
         score = 0;
         ShowScore();
 
-        while(snake->IsCollisionWall == false)
+        while( (snake->IsCollisionWall == false) && (!IsStopRequested()) )
         {
             // へび移動
             snake->Move(snake);
@@ -108,7 +135,14 @@ void ShowGameoverMsg()
     x = ( (SCREEN_WIDTH - strlen(msg)) / 2) + 1;
     y = SCREEN_HEIGHT / 2;
     drawObject->PutStr(drawObject,x,y,msg);
-    Sleep(3000);
+    for (int i = 0; i < 30 && !IsStopRequested(); i++)
+    {
+        Sleep(100);
+    }
+    if (IsStopRequested())
+    {
+        return;
+    }
 
     // 3秒の待機中に入力されたキーを破棄する
     while (_kbhit())
@@ -125,10 +159,17 @@ void ShowGameoverMsg()
     drawObject->PutStr(drawObject,x,(y+1),msg);
 
     // 案内を表示してから押されたキーを待つ
-    int key = _getch();
-    if (key == 0 || key == 0xE0)
+    while (!_kbhit() && !IsStopRequested())
     {
-        (void)_getch();
+        Sleep(50);
+    }
+    if (!IsStopRequested())
+    {
+        int key = _getch();
+        if (key == 0 || key == 0xE0)
+        {
+            (void)_getch();
+        }
     }
 }
 
@@ -205,17 +246,25 @@ void ShowScore()
 //!
 int main(void)
 {
+    BOOL isRegistCtrlHandler = FALSE;
+
+    // [Ctrl+c]割り込みハンドラを登録
+    if (SetConsoleCtrlHandler(HandleConsoleControl, TRUE))
+    {
+        isRegistCtrlHandler = TRUE;
+    }
+    else
+    {
+        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
+        goto END;
+    }
+
     // 初期化
     drawObject = DrawObject_New();
     if(drawObject == NULL)
     {
         ShowErrorMsg(__LINE__, (const int8_t*)__func__);
         goto END;
-    }
-
-    if (!drawObject->HideCursor(drawObject))
-    {
-        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
     }
 
     wall = Wall_New(drawObject,SCREEN_WIDTH,SCREEN_HEIGHT);
@@ -238,16 +287,41 @@ int main(void)
         ShowErrorMsg(__LINE__, (const int8_t*)__func__);
         goto END;
     }
+
+    // カーソル消去
+    if (!drawObject->HideCursor(drawObject))
+    {
+        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
+    }
     
     // ゲーム処理
     PlayGame();
 
 END:
+    // カーソルを画面最下段に設定
+    if (drawObject != NULL)
+    {
+        drawObject->PutChar(drawObject, 0, (SCREEN_HEIGHT + 2), ' ');
+    }
+
+    // [Ctrl+C]割り込み解除
+    if(isRegistCtrlHandler)
+    {
+        if(!SetConsoleCtrlHandler(HandleConsoleControl, FALSE))
+        {
+            ShowErrorMsg(__LINE__, (const int8_t*)__func__);
+        }
+    }
+
+    // カーソル消去を解除
     if (drawObject != NULL && !drawObject->RestoreCursor(drawObject))
     {
         ShowErrorMsg(__LINE__, (const int8_t*)__func__);
     }
+
     if(wall != NULL)Wall_Delete(wall);
+    if(food != NULL)Food_Delete(food);
+    if(snake != NULL)Snake_Delete(snake);
     if(drawObject != NULL)DrawObject_Delete(drawObject);
     return 0;
 }
