@@ -16,6 +16,7 @@ Snake* snake           = NULL;
 
 void ShowErrorMsg(uint32_t line, const int8_t* func);
 void PlayGame();
+bool IsEat();
 void ShowGameoverMsg();
 
 //-----------------------------------------------------------------------------
@@ -62,6 +63,12 @@ void PlayGame()
             {
                 ShowGameoverMsg();
             }
+            else if(IsEat() == true)
+            {
+                // えさ表示
+                food->Arrival(food);
+                food->Draw(food);
+            }
             else
             {
                 Sleep(250);
@@ -93,6 +100,17 @@ void ShowGameoverMsg()
         break;
     }
 }
+
+//-----------------------------------------------------------------------------
+//! @brief   へびがえさを食べたか判定
+//! @details 無し
+//! @return  true:食べた  false:食べてない
+//!
+bool IsEat()
+{
+    return( (food->X == snake->Body->Data[0].X) && (food->Y == snake->Body->Data[0].Y) );
+}
+
 
 //-----------------------------------------------------------------------------
 //! @brief   メイン処理
