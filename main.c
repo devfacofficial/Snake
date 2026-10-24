@@ -17,6 +17,7 @@ Snake* snake           = NULL;
 void ShowErrorMsg(uint32_t line, const int8_t* func);
 void PlayGame();
 bool IsEat();
+void ShowFood();
 void ShowGameoverMsg();
 
 //-----------------------------------------------------------------------------
@@ -46,17 +47,17 @@ void PlayGame()
         // 壁表示
         wall->Show(wall);
 
-        // えさ表示
-        food->Arrival(food);
-        food->Draw(food);
-
         // へび初期化
         snake->Init(snake);
+
+        // えさ表示
+        ShowFood();
 
         while(snake->IsCollisionWall == false)
         {
             // へび移動
             snake->Move(snake);
+            food->Draw(food);
 
             // 障害物または体に衝突
             if(snake->IsCollisionWall == true)
@@ -66,8 +67,7 @@ void PlayGame()
             else if(IsEat() == true)
             {
                 // えさ表示
-                food->Arrival(food);
-                food->Draw(food);
+                ShowFood();
 
                 // へびの体を１個追加
                 snake->AddBody(snake, -1, -1);
@@ -89,18 +89,33 @@ void ShowGameoverMsg()
 {
     char msg[SCREEN_WIDTH];
     int32_t x;
+    int32_t y;
 
     strcpy(msg,"GAME OVER!");
     x = ( (SCREEN_WIDTH - strlen(msg)) / 2) + 1;
-    drawObject->PutStr(drawObject,x,10,msg);
+    y = SCREEN_HEIGHT / 2;
+    drawObject->PutStr(drawObject,x,y,msg);
+    Sleep(3000);
+
+    // 3秒の待機中に入力されたキーを破棄する
+    while (_kbhit())
+    {
+        int key = _getch();
+        if (key == 0 || key == 0xE0)
+        {
+            (void)_getch();
+        }
+    }
 
     strcpy(msg,"HIT ANY KEY!");
     x = ( (SCREEN_WIDTH - strlen(msg)) / 2) + 1;
-    drawObject->PutStr(drawObject,x,11,msg);
+    drawObject->PutStr(drawObject,x,(y+1),msg);
 
-    while(_getch())
+    // 案内を表示してから押されたキーを待つ
+    int key = _getch();
+    if (key == 0 || key == 0xE0)
     {
-        break;
+        (void)_getch();
     }
 }
 
@@ -114,6 +129,49 @@ bool IsEat()
     return( (food->X == snake->Body->Data[0].X) && (food->Y == snake->Body->Data[0].Y) );
 }
 
+//-----------------------------------------------------------------------------
+//! @brief   えさを表示
+//! @details へびと壁以外の場所にえさを置く
+//! @return  無し
+//!
+void ShowFood()
+{
+    int8_t screen[SCREEN_HEIGHT][SCREEN_WIDTH];
+    PosArrayIterator iterator = PosArray_Iterator(snake->Body);
+    Pos* position = NULL;
+
+    // へびのいる位置を配列に格納
+    memset(screen, 0, sizeof(screen));
+    while((position = iterator.Next(&iterator)) != NULL)
+    {
+        if( (position->X == -1) || (position->Y == -1) )
+        {
+            continue;
+        }
+        screen[(position->Y - 2)][(position->X - 1)] = 1;
+    }
+
+    // えさの位置決め
+    food->Arrival(food);
+
+    // えさがへびと重なっていたら、空いてる場所に移動
+    if(screen[food->Y][food->X] == 1)
+    {
+        for(int x=0; x<SCREEN_WIDTH; x++)
+        {
+            for(int y=0; y<SCREEN_HEIGHT; y++)
+            {
+                if(screen[y][x] == 0)
+                {
+                    food->X = x + 1;
+                    food->Y = y + 2;
+                }
+            }
+        }
+    }
+
+    food->Draw(food);
+}
 
 //-----------------------------------------------------------------------------
 //! @brief   メイン処理
