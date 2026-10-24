@@ -13,12 +13,14 @@ DrawObject* drawObject = NULL;
 Wall* wall             = NULL;
 Food* food             = NULL;
 Snake* snake           = NULL;
+int32_t score          = 0;
 
 void ShowErrorMsg(uint32_t line, const int8_t* func);
 void PlayGame();
 bool IsEat();
 void ShowFood();
 void ShowGameoverMsg();
+void ShowScore();
 
 //-----------------------------------------------------------------------------
 //! @brief   エラーメッセージ表示
@@ -53,6 +55,10 @@ void PlayGame()
         // えさ表示
         ShowFood();
 
+        // スコアクリア
+        score = 0;
+        ShowScore();
+
         while(snake->IsCollisionWall == false)
         {
             // へび移動
@@ -66,6 +72,13 @@ void PlayGame()
             }
             else if(IsEat() == true)
             {
+                // スコア加算
+                if( score < 99999 )
+                {
+                    score += 30;
+                    ShowScore();
+                }
+
                 // えさ表示
                 ShowFood();
 
@@ -171,6 +184,18 @@ void ShowFood()
     }
 
     food->Draw(food);
+}
+
+//-----------------------------------------------------------------------------
+//! @brief   スコア表示
+//! @details 無し
+//! @return  無し
+//!
+void ShowScore()
+{
+    char msg[20];
+    sprintf(msg,"Score:%d",score);
+    drawObject->PutStr(drawObject,0,0,msg);
 }
 
 //-----------------------------------------------------------------------------

@@ -1,7 +1,8 @@
 <map version="freeplane 1.12.15">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <bookmarks/>
-<node TEXT="スネーク" FOLDED="false" ID="ID_696401721" CREATED="1610381621824" MODIFIED="1792593222537" STYLE="oval">
+<node TEXT="スネーク" FOLDED="false" ID="ID_696401721" CREATED="1610381621824" MODIFIED="1792807811422" STYLE="oval">
+<icon BUILTIN="button_ok"/>
 <font SIZE="18"/>
 <hook NAME="MapStyle">
     <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_icon_for_attributes="true" auto_compact_layout="true" show_tags="UNDER_NODES" associatedTemplateLocation="template:/standard-1.6.mm" show_note_icons="true" fit_to_viewport="false" show_icons="BESIDE_NODES" showTagCategories="false"/>
@@ -144,11 +145,14 @@
 </node>
 </node>
 </node>
-<node TEXT="スコアを表示" ID="ID_1280060393" CREATED="1792802542107" MODIFIED="1792802547810">
-<node TEXT="ゲームスタート" ID="ID_437535270" CREATED="1792802553412" MODIFIED="1792802603356">
+<node TEXT="スコアを表示" ID="ID_1280060393" CREATED="1792802542107" MODIFIED="1792807815354">
+<icon BUILTIN="button_ok"/>
+<node TEXT="ゲームスタート" ID="ID_437535270" CREATED="1792802553412" MODIFIED="1792807797749">
+<icon BUILTIN="button_ok"/>
 <node TEXT="0" OBJECT="java.lang.Long|0" ID="ID_1472504341" CREATED="1792802560315" MODIFIED="1792802564630"/>
 </node>
-<node TEXT="エサを食べる" ID="ID_789493253" CREATED="1792802604458" MODIFIED="1792802609478">
+<node TEXT="エサを食べる" ID="ID_789493253" CREATED="1792802604458" MODIFIED="1792807805550">
+<icon BUILTIN="button_ok"/>
 <node TEXT="30" OBJECT="java.lang.Integer|30" ID="ID_1750080589" CREATED="1792802610241" MODIFIED="1792802614532"/>
 </node>
 </node>
@@ -210,7 +214,10 @@
 <node TEXT="要求仕様" POSITION="top_or_left" ID="ID_1954653293" CREATED="1792593225904" MODIFIED="1792593230404">
 <edge COLOR="#0000ff"/>
 <node TEXT="画面内のヘビを操作してエサを沢山たべる" ID="ID_1870387205" CREATED="1792593483785" MODIFIED="1792593508282"/>
-<node TEXT="壁か自分に触れたらゲームオーバー" ID="ID_1595295984" CREATED="1792593508577" MODIFIED="1792593519851"/>
+<node TEXT="壁か自分に触れたらゲームオーバー" ID="ID_1595295984" CREATED="1792593508577" MODIFIED="1792807802887">
+<icon BUILTIN="button_ok"/>
+<icon BUILTIN="button_ok"/>
+</node>
 <node TEXT="画面" ID="ID_121616646" CREATED="1792593520616" MODIFIED="1792593527091">
 <node TEXT="スコア" ID="ID_1360533919" CREATED="1792593689675" MODIFIED="1792593694358"/>
 <node TEXT="壁" ID="ID_1269174351" CREATED="1792593527400" MODIFIED="1792797443801">
