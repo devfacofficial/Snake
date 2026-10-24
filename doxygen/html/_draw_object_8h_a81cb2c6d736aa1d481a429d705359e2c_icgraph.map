@@ -1,0 +1,10 @@
+<map id="DrawObject_HideCursor" name="DrawObject_HideCursor">
+<area shape="rect" id="Node000001" title="カーソルを非表示にする" alt="" coords="276,29,439,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="389,14,379,10,357,8,338,10,327,15,324,20,329,30,325,28,319,21,323,11,336,5,358,3,380,5,394,15"/>
+<area shape="rect" id="Node000002" href="$_draw_object_8c.html#afd123f936a1479ff6141796e2e6ba0fb" title="描画オブジェクトを作成する" alt="" coords="103,29,228,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="257,43,228,45,228,40,263,43"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="187,14,180,10,166,8,152,10,145,14,143,20,147,30,142,28,138,21,141,11,150,5,166,3,182,5,192,15"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="メイン処理" alt="" coords="6,29,55,56"/>
+<area shape="poly" id="edge4_Node000002_Node000003" title=" " alt="" coords="85,43,56,45,56,40,90,42"/>
+<area shape="poly" id="edge5_Node000003_Node000003" title=" " alt="" coords="52,15,45,10,31,8,17,10,10,14,8,20,12,28,7,30,3,21,6,11,15,5,31,3,47,5,57,14"/>
+</map>

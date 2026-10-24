@@ -1,0 +1,36 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="メイン処理" alt="" coords="5,259,55,285"/>
+<area shape="rect" id="Node000002" href="$_draw_object_8c.html#aa1320f74ef4393962e7d459dc489a087" title="描画オブジェクトを解放する" alt="" coords="111,5,246,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="29,258,32,216,42,159,64,97,80,68,101,42,107,39,104,43,105,46,84,71,69,99,47,160,37,217,34,258"/>
+<area shape="rect" id="Node000003" href="$_draw_object_8c.html#afd123f936a1479ff6141796e2e6ba0fb" title="描画オブジェクトを作成する" alt="" coords="117,56,241,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="30,258,36,225,49,181,69,134,84,112,101,93,108,89,105,94,105,97,88,115,74,136,54,182,41,226,36,259"/>
+<area shape="rect" id="Node000004" href="$_food_8c.html#a5ee457277f4fb2d3ecaf45ce94f0b62c" title="デストラクタ" alt="" coords="131,107,226,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="33,257,56,202,75,171,101,143,118,134,115,138,104,147,80,174,61,205,38,259"/>
+<area shape="rect" id="Node000005" href="$_food_8c.html#a813d41033a3c5a04604c4677d91ad577" title="コンストラクタ" alt="" coords="137,157,221,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="39,257,65,225,101,194,124,184,121,188,104,198,69,229,43,259"/>
+<area shape="rect" id="Node000006" href="$main_8c.html#a51272fdab47aac800bb466ec43bb5272" title="Ctrl+c 割り込みハンドラ" alt="" coords="103,208,255,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="53,261,102,244,124,238,120,242,104,249,57,265"/>
+<area shape="rect" id="Node000007" href="$main_8c.html#abe8fb32876e59245d5197eca51c72f77" title="ゲーム処理" alt="" coords="138,259,220,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="54,270,124,270,120,274,56,274"/>
+<area shape="rect" id="Node000013" href="$main_8c.html#a49907f43ba3dd0b8eb05098d3c97d005" title="エラーメッセージ表示" alt="" coords="125,309,232,336"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="54,278,104,295,124,303,120,305,102,300,56,283"/>
+<area shape="rect" id="Node000014" href="$_snake_8c.html#a72884e1ad9a7008e69f421cdd675cb58" title="デストラクタ" alt="" coords="127,360,230,387"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="41,283,69,315,104,346,115,353,110,355,101,350,65,319,41,288"/>
+<area shape="rect" id="Node000015" href="$_snake_8c.html#a90e5aa47f243e1c0c49426bd699f7965" title="コンストラクタ" alt="" coords="133,411,225,437"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="36,283,61,339,80,370,104,397,121,408,115,409,101,401,75,373,56,342,35,289"/>
+<area shape="rect" id="Node000016" href="$_wall_8c.html#a50d5c6d143835b0a92ee0d56daf4d9cc" title="デストラクタ" alt="" coords="133,461,224,488"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="33,283,41,318,54,362,74,408,88,429,104,447,121,460,116,461,101,451,84,432,69,410,49,363,36,319,33,288"/>
+<area shape="rect" id="Node000017" href="$_wall_8c.html#a71c5ca30f3399942451a2e032f6cecf2" title="コンストラクタ" alt="" coords="139,512,219,539"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="32,283,37,327,47,384,69,445,84,473,104,498,127,514,121,514,101,502,80,476,64,447,42,385,32,328,31,289"/>
+<area shape="rect" id="Node000008" href="$main_8c.html#ae85fdc0ed84699b2bb13a447390fa5c5" title="へびがえさを食べたか判定" alt="" coords="346,157,399,184"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="219,260,254,244,268,234,277,223,301,201,334,185,330,188,305,205,281,227,271,238,256,249,222,264"/>
+<area shape="rect" id="Node000009" href="$main_8c.html#a4988599a60a7477356582b64595d7ab2" title="Ctrl+c 割り込み有り" alt="" coords="490,259,613,285"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="219,259,303,244,373,239,443,244,490,254,484,255,442,249,373,244,303,249,221,264"/>
+<area shape="rect" id="Node000010" href="$main_8c.html#a08387d878a478e1f4119d5e25c0292b0" title="えさを表示" alt="" coords="331,259,414,285"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="219,269,318,271,313,273,221,275"/>
+<area shape="rect" id="Node000011" href="$main_8c.html#aeee3a2e7ea523b696cb19b6ff83c0725" title="ゲーム終了メッセージ表示" alt="" coords="303,309,442,336"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="220,280,306,304,302,306,221,285"/>
+<area shape="rect" id="Node000012" href="$main_8c.html#aa206e85513921cd0c8007dac550fd994" title="スコア表示" alt="" coords="328,360,417,387"/>
+<area shape="poly" id="edge12_Node000007_Node000012" title=" " alt="" coords="220,279,256,295,272,308,281,321,290,333,305,346,317,354,312,355,301,350,286,337,277,324,268,312,254,300,221,284"/>
+<area shape="poly" id="edge11_Node000011_Node000009" title=" " alt="" coords="422,306,490,289,485,291,424,311"/>
+</map>

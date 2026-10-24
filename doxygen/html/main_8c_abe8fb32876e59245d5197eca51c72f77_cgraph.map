@@ -1,0 +1,14 @@
+<map id="PlayGame" name="PlayGame">
+<area shape="rect" id="Node000001" title="ゲーム処理" alt="" coords="5,107,88,133"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#ae85fdc0ed84699b2bb13a447390fa5c5" title="へびがえさを食べたか判定" alt="" coords="179,5,232,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,104,94,77,134,48,167,33,163,37,137,53,97,81,65,108"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a4988599a60a7477356582b64595d7ab2" title="Ctrl+c 割り込み有り" alt="" coords="323,107,445,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="86,104,135,92,205,86,275,92,322,102,317,103,275,97,205,91,136,97,88,109"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a08387d878a478e1f4119d5e25c0292b0" title="えさを表示" alt="" coords="164,107,247,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="87,117,150,118,146,122,89,123"/>
+<area shape="rect" id="Node000005" href="$main_8c.html#aeee3a2e7ea523b696cb19b6ff83c0725" title="ゲーム終了メッセージ表示" alt="" coords="136,157,275,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="88,130,149,151,144,153,88,136"/>
+<area shape="rect" id="Node000006" href="$main_8c.html#aa206e85513921cd0c8007dac550fd994" title="スコア表示" alt="" coords="161,208,250,235"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="61,131,95,162,137,194,149,202,144,202,134,198,91,166,60,136"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="255,154,323,137,318,139,256,159"/>
+</map>

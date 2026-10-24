@@ -1,0 +1,7 @@
+<map id="Snake_Collision" name="Snake_Collision">
+<area shape="rect" id="Node000001" title="衝突判定" alt="" coords="5,29,121,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="30,29,25,21,29,11,42,5,63,3,86,5,99,14,94,14,84,10,63,8,43,10,33,15,30,20,35,29"/>
+<area shape="rect" id="Node000002" href="$_snake_8c.html#a4c215fa4aa74d5e9dcc12e0127af2cb5" title="移動後の頭の位置を取得" alt="" coords="169,29,337,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="121,40,156,42,150,43,121,45"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="220,28,215,21,219,11,232,5,253,3,276,5,289,14,284,14,274,10,253,8,233,10,222,15,220,20,225,30"/>
+</map>

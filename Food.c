@@ -7,15 +7,15 @@
 
 //-----------------------------------------------------------------------------
 //! @brief   コンストラクタ
-//! @details えさオブジェクト生成
-//! @return  えさオブジェクト / 生成失敗時NULLを返す
+//! @details エサオブジェクト生成
+//! @return  エサオブジェクト / 生成失敗時NULLを返す
 //!
 Food* Food_New(
     DrawObject* drawObj,                //!< [I]描画オブジェクト
     int32_t     width,                  //!< [I]幅
     int32_t     height,                 //!< [I]高さ
-    int32_t     ofstx,                  //!< [I]えさ位置のオフセットX
-    int32_t     ofsty)                  //!< [I]えさ位置のオフセットY
+    int32_t     ofstx,                  //!< [I]エサ位置のオフセットX
+    int32_t     ofsty)                  //!< [I]エサ位置のオフセットY
 {
     if (drawObj == NULL || width <= 0 || height <= 0)
     {
@@ -43,7 +43,7 @@ Food* Food_New(
 
 //-----------------------------------------------------------------------------
 //! @brief   デストラクタ
-//! @details えさオブジェクト解放
+//! @details エサオブジェクト解放
 //! @return  無し
 //!
 void Food_Delete(
@@ -57,8 +57,8 @@ void Food_Delete(
 }
 
 //-----------------------------------------------------------------------------
-//! @brief   フード登場
-//! @details フードをランダムな位置に設定する
+//! @brief   エサ登場
+//! @details エサをランダムな位置に設定する
 //! @return  無し
 //!
 void Food_Arrival(
@@ -77,8 +77,8 @@ void Food_Arrival(
 }
 
 //-----------------------------------------------------------------------------
-//! @brief   フード表示
-//! @details X,Y座標にフードを表示する
+//! @brief   エサ表示
+//! @details X,Y座標にエサを表示する
 //! @return  無し
 //!
 void Food_Draw(
@@ -91,19 +91,19 @@ void Food_Draw(
         return;
     }
 
-    // えさ座標未設定のため表示しない
+    // エサ座標未設定のため表示しない
     if( (this->X == -1) || (this->Y == -1) )
     {
         return;
     }
 
-    // えさ表示
+    // エサ表示
     this->DrawObj->PutChar(this->DrawObj, this->X, this->Y, '$');
 }
 
 //-----------------------------------------------------------------------------
-//! @brief   フード消失
-//! @details フードを消す
+//! @brief   エサ消失
+//! @details エサを消す
 //! @return  無し
 //!
 void Food_Disappear(
@@ -116,7 +116,7 @@ void Food_Disappear(
         return;
     }
 
-    // えさ消去
+    // エサ消去
     this->DrawObj->PutChar(this->DrawObj, this->X, this->Y, ' ');
     this->X = -1;
     this->Y = -1;

@@ -1,0 +1,5 @@
+<map id="ShowGameoverMsg" name="ShowGameoverMsg">
+<area shape="rect" id="Node000001" title="ゲーム終了メッセージ表示" alt="" coords="5,5,145,32"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a4988599a60a7477356582b64595d7ab2" title="Ctrl+c 割り込み有り" alt="" coords="193,5,315,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,16,180,19,175,19,145,21"/>
+</map>

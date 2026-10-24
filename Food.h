@@ -4,18 +4,22 @@
 #include <stdint.h>
 #include "DrawObject.h"
 
+//-----------------------------------------------------------------------------
+//! @brief   エサ
+//! @details エサの生成／消去を行う
+//!
 typedef struct Food
 {
-    int32_t Width;
-    int32_t Height;
-    int32_t X;
-    int32_t Y;
-    int32_t OfstX;
-    int32_t OfstY;
-    DrawObject* DrawObj;
-    void (*Arrival)(struct Food* this);
-    void (*Draw)(struct Food* this);
-    void (*Disappear)(struct Food* this);
+    int32_t Width;          //!< 画面幅
+    int32_t Height;         //!< 画面高さ
+    int32_t X;              //!< エサX
+    int32_t Y;              //!< エサY
+    int32_t OfstX;          //!< エサ描画位置オフセットX
+    int32_t OfstY;          //!< エサ描画位置オフセットY
+    DrawObject* DrawObj;    //!< 描画オブジェクト
+    void (*Arrival)(struct Food* this);     //!< エサ登場
+    void (*Draw)(struct Food* this);        //!< エサ表示
+    void (*Disappear)(struct Food* this);   //!< エサ消失
 } Food;
 
 Food* Food_New(DrawObject* drawObj, int32_t width, int32_t height, int32_t ofstx, int32_t ofsty);

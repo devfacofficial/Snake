@@ -1,0 +1,13 @@
+<map id="Snake_ChangeDirection" name="Snake_ChangeDirection">
+<area shape="rect" id="Node000001" title="へび移動方向判定" alt="" coords="388,29,551,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="498,14,489,10,469,8,451,10,441,15,439,20,444,30,439,28,434,21,437,11,450,5,470,3,491,5,504,15"/>
+<area shape="rect" id="Node000002" href="$_snake_8c.html#a1baff1512bbc423a02ec4a53e426122d" title="へび移動" alt="" coords="243,29,340,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="370,43,341,45,341,40,375,43"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="314,13,307,10,292,8,277,10,269,14,268,20,271,30,267,28,262,21,265,11,275,5,292,3,309,5,320,15"/>
+<area shape="rect" id="Node000003" href="$_snake_8c.html#a90e5aa47f243e1c0c49426bd699f7965" title="コンストラクタ" alt="" coords="103,29,195,56"/>
+<area shape="poly" id="edge4_Node000002_Node000003" title=" " alt="" coords="225,43,196,45,195,40,230,43"/>
+<area shape="poly" id="edge7_Node000003_Node000003" title=" " alt="" coords="167,14,161,10,149,8,137,10,131,14,129,20,132,30,128,28,124,20,126,11,135,5,149,3,164,5,172,15"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="メイン処理" alt="" coords="5,29,55,56"/>
+<area shape="poly" id="edge5_Node000003_Node000004" title=" " alt="" coords="84,43,55,45,55,40,89,42"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="48,15,43,10,30,8,18,10,12,14,10,20,14,28,9,29,5,20,8,11,16,5,30,3,45,5,54,14"/>
+</map>

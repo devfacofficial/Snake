@@ -1,0 +1,10 @@
+<map id="Food_Arrival" name="Food_Arrival">
+<area shape="rect" id="Node000001" title="フード登場" alt="" coords="235,29,329,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="304,13,297,10,282,8,268,10,261,14,259,20,263,30,258,28,254,21,257,11,266,5,282,3,299,5,309,15"/>
+<area shape="rect" id="Node000002" href="$_food_8c.html#a813d41033a3c5a04604c4677d91ad577" title="コンストラクタ" alt="" coords="103,29,187,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="217,43,188,45,188,40,222,43"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="162,13,157,10,145,8,134,10,128,14,126,20,129,30,124,28,121,20,123,11,131,5,145,3,159,5,168,14"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="メイン処理" alt="" coords="5,29,55,56"/>
+<area shape="poly" id="edge4_Node000002_Node000003" title=" " alt="" coords="85,44,55,45,55,40,90,42"/>
+<area shape="poly" id="edge5_Node000003_Node000003" title=" " alt="" coords="47,14,42,10,30,8,19,10,13,14,11,20,14,28,9,29,6,20,8,11,17,5,30,3,44,5,53,13"/>
+</map>

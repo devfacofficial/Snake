@@ -1,0 +1,19 @@
+<map id="DrawObject_New" name="DrawObject_New">
+<area shape="rect" id="Node000001" title="描画オブジェクトを作成する" alt="" coords="5,179,130,205"/>
+<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="33,179,27,170,31,160,45,154,68,152,92,155,106,162,101,164,90,160,67,157,46,159,35,164,32,169,38,178"/>
+<area shape="rect" id="Node000002" href="$_draw_object_8c.html#a4f51f757b38b7627fa69c3e0d0b99c71" title="表示領域の中心座標を取得する" alt="" coords="190,29,348,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,177,114,123,143,92,176,66,189,61,185,64,179,70,146,96,118,126,79,180"/>
+<area shape="rect" id="Node000003" href="$_draw_object_8c.html#a81cb2c6d736aa1d481a429d705359e2c" title="カーソルを非表示にする" alt="" coords="187,104,350,131"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="95,176,177,140,201,134,196,137,179,145,98,180"/>
+<area shape="rect" id="Node000004" href="$_draw_object_8c.html#a5bb201af1684d47b3e7a9269b6a48f52" title="指定位置に1文字描画する" alt="" coords="196,179,342,205"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="129,189,183,191,179,193,131,195"/>
+<area shape="rect" id="Node000005" href="$_draw_object_8c.html#a4325296100fd6427b4308efa96d5c4d0" title="指定位置に文字列を描画する" alt="" coords="202,253,336,280"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="106,203,218,246,214,249,106,209"/>
+<area shape="rect" id="Node000006" href="$_draw_object_8c.html#af70ed06974b4543a0637c99e48106617" title="カーソルを非表示にする前の状態に戻す" alt="" coords="178,328,360,355"/>
+<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="82,203,125,244,179,290,227,320,222,321,176,294,121,248,81,208"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="234,29,228,21,233,11,246,5,269,3,293,5,307,13,302,15,291,10,269,8,248,10,236,15,234,20,240,29"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="234,103,228,95,233,86,246,79,269,77,293,80,307,88,302,89,291,85,269,83,248,85,236,89,234,95,240,104"/>
+<area shape="poly" id="edge7_Node000004_Node000004" title=" " alt="" coords="234,178,228,170,233,160,246,154,269,152,293,155,307,163,302,164,291,160,269,157,248,159,236,164,234,169,239,179"/>
+<area shape="poly" id="edge9_Node000005_Node000005" title=" " alt="" coords="234,252,228,245,233,235,246,229,269,227,293,229,307,238,302,238,291,234,269,232,248,234,236,239,234,244,239,254"/>
+<area shape="poly" id="edge11_Node000006_Node000006" title=" " alt="" coords="234,327,228,319,233,310,246,303,269,301,293,304,307,313,302,312,291,309,269,307,248,309,236,313,234,319,239,329"/>
+</map>

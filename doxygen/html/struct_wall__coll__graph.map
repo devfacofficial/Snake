@@ -1,0 +1,5 @@
+<map id="Wall" name="Wall">
+<area shape="rect" id="Node000001" title="壁" alt="" coords="27,104,74,131"/>
+<area shape="rect" id="Node000002" href="$struct_draw_object.html" title="描画オブジェクト" alt="" coords="5,5,96,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,46,53,104,48,103,48,49"/>
+</map>

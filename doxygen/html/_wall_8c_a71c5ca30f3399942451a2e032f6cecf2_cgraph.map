@@ -1,0 +1,7 @@
+<map id="Wall_New" name="Wall_New">
+<area shape="rect" id="Node000001" title="コンストラクタ" alt="" coords="5,29,86,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="22,29,18,21,21,11,30,5,46,3,62,5,71,14,66,14,60,10,45,8,32,10,25,14,24,20,27,29"/>
+<area shape="rect" id="Node000002" href="$_wall_8c.html#af33ea50daa2dd1f2f5db421db328fcdc" title="壁表示" alt="" coords="134,29,220,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="86,40,121,42,116,43,86,45"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="154,28,150,21,152,11,162,5,177,3,193,5,203,15,197,14,191,10,177,8,164,10,157,14,155,20,158,30"/>
+</map>

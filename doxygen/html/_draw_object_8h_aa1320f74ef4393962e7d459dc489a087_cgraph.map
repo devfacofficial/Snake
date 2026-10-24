@@ -1,0 +1,7 @@
+<map id="DrawObject_Delete" name="DrawObject_Delete">
+<area shape="rect" id="Node000001" title="描画オブジェクトを解放する" alt="" coords="5,29,141,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="37,29,32,21,36,11,50,5,73,3,98,5,112,14,107,14,96,10,73,8,51,10,40,15,37,20,43,29"/>
+<area shape="rect" id="Node000002" href="$_draw_object_8c.html#af70ed06974b4543a0637c99e48106617" title="カーソルを非表示にする前の状態に戻す" alt="" coords="189,29,371,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="141,40,176,42,170,43,141,45"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="245,28,238,21,243,11,257,5,280,3,304,5,319,14,314,14,303,10,280,8,258,10,246,15,244,20,249,30"/>
+</map>

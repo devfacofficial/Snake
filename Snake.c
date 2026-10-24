@@ -33,7 +33,6 @@ Snake* Snake_New(
     this->OfstX           = ofstx;
     this->OfstY           = ofsty;
     this->Direction       = RIGHT;
-    this->IsCollisionFood = false;
     this->IsCollisionWall = false;
     this->DrawObj         = drawObj;
     this->Body            = NULL;
@@ -86,7 +85,6 @@ void Snake_Init(
     }
 
     this->Direction       = RIGHT;
-    this->IsCollisionFood = false;
     this->IsCollisionWall = false;
 
     // へびの初期状態を設定

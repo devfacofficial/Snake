@@ -1,0 +1,10 @@
+<map id="IsStopRequested" name="IsStopRequested">
+<area shape="rect" id="Node000001" title="Ctrl+c 割り込み有り" alt="" coords="420,5,543,32"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#abe8fb32876e59245d5197eca51c72f77" title="ゲーム処理" alt="" coords="103,5,185,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="404,21,186,21,185,16,406,16"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#aeee3a2e7ea523b696cb19b6ff83c0725" title="ゲーム終了メッセージ表示" alt="" coords="233,31,372,57"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="408,29,373,37,373,31,403,30"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="メイン処理" alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,20,55,21,54,16,89,17"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="215,30,185,28,186,23,220,30"/>
+</map>
