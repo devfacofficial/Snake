@@ -6,7 +6,17 @@
 #include "Food.h"
 #include "Snake.h"
 
+#define SCREEN_WIDTH  40
+#define SCREEN_HEIGHT 20
+
+DrawObject* drawObject = NULL;
+Wall* wall             = NULL;
+Food* food             = NULL;
+Snake* snake           = NULL;
+
 void ShowErrorMsg(uint32_t line, const int8_t* func);
+void PlayGame();
+void ShowGameoverMsg();
 
 //-----------------------------------------------------------------------------
 //! @brief   エラーメッセージ表示
@@ -22,48 +32,14 @@ void ShowErrorMsg(
     fputs((char*)msg, stderr);
 }
 
+
 //-----------------------------------------------------------------------------
-//! @brief   メイン処理
-//! @details スネークゲームを実行する
-//! @return  0:正常終了  0以外:異常終了
+//! @brief   ゲーム処理
+//! @details ゲームを実行する
+//! @return  無し
 //!
-int main(void)
+void PlayGame()
 {
-    DrawObject* drawObject = NULL;
-    Wall* wall = NULL;
-    Food* food = NULL;
-    Snake* snake = NULL;
-
-    // 初期化
-    drawObject = DrawObject_New();
-    if(drawObject == NULL)
-    {
-        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
-        goto END;
-    }
-
-    wall = Wall_New(drawObject,20,20);
-    if(wall == NULL)
-    {
-        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
-        goto END;
-    }
-
-    food = Food_New(drawObject,20,20, 1, 2);
-    if(food == NULL)
-    {
-        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
-        goto END;
-    }
-
-    snake = Snake_New(drawObject, 20, 20, 1, 2);
-    if(food == NULL)
-    {
-        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
-        goto END;
-    }
-
-    // ゲーム処理
     while(1)
     {
         // 壁表示
@@ -84,14 +60,7 @@ int main(void)
             // 障害物または体に衝突
             if(snake->IsCollisionWall == true)
             {
-                drawObject->PutStr(drawObject,1, 9,"                    ");
-                drawObject->PutStr(drawObject,1,10,"     GAME OVER!     ");
-                drawObject->PutStr(drawObject,1,11,"    HIT ANY KEY!    ");
-                drawObject->PutStr(drawObject,1,12,"                    ");
-                while(_getch())
-                {
-                    break;
-                }
+                ShowGameoverMsg();
             }
             else
             {
@@ -99,7 +68,71 @@ int main(void)
             }
         }
     }
+}
+
+//-----------------------------------------------------------------------------
+//! @brief   ゲーム終了メッセージ表示
+//! @details キーが入力されるまで待機
+//! @return  無し
+//!
+void ShowGameoverMsg()
+{
+    char msg[SCREEN_WIDTH];
+    int32_t x;
+
+    strcpy(msg,"GAME OVER!");
+    x = ( (SCREEN_WIDTH - strlen(msg)) / 2) + 1;
+    drawObject->PutStr(drawObject,x,10,msg);
+
+    strcpy(msg,"HIT ANY KEY!");
+    x = ( (SCREEN_WIDTH - strlen(msg)) / 2) + 1;
+    drawObject->PutStr(drawObject,x,11,msg);
+
+    while(_getch())
+    {
+        break;
+    }
+}
+
+//-----------------------------------------------------------------------------
+//! @brief   メイン処理
+//! @details スネークゲームを実行する
+//! @return  0:正常終了  0以外:異常終了
+//!
+int main(void)
+{
+    // 初期化
+    drawObject = DrawObject_New();
+    if(drawObject == NULL)
+    {
+        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
+        goto END;
+    }
+
+    wall = Wall_New(drawObject,SCREEN_WIDTH,SCREEN_HEIGHT);
+    if(wall == NULL)
+    {
+        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
+        goto END;
+    }
+
+    food = Food_New(drawObject, SCREEN_WIDTH, SCREEN_HEIGHT, 1, 2);
+    if(food == NULL)
+    {
+        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
+        goto END;
+    }
+
+    snake = Snake_New(drawObject, SCREEN_WIDTH, SCREEN_HEIGHT, 1, 2);
+    if(food == NULL)
+    {
+        ShowErrorMsg(__LINE__, (const int8_t*)__func__);
+        goto END;
+    }
     
+    // ゲーム処理
+    PlayGame();
+
 END:
     if(wall != NULL)Wall_Delete(wall);
     if(drawObject != NULL)DrawObject_Delete(drawObject);
