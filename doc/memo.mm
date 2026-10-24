@@ -1,10 +1,9 @@
 <map version="freeplane 1.12.15">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <bookmarks/>
-<node TEXT="スネーク" FOLDED="false" ID="ID_696401721" CREATED="1610381621824" MODIFIED="1792807811422" STYLE="oval">
-<icon BUILTIN="button_ok"/>
+<node TEXT="スネーク" FOLDED="false" ID="ID_696401721" CREATED="1610381621824" MODIFIED="1792855498032" STYLE="oval">
 <font SIZE="18"/>
-<hook NAME="MapStyle">
+<hook NAME="MapStyle" zoom="0.9090909">
     <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_icon_for_attributes="true" auto_compact_layout="true" show_tags="UNDER_NODES" associatedTemplateLocation="template:/standard-1.6.mm" show_note_icons="true" fit_to_viewport="false" show_icons="BESIDE_NODES" showTagCategories="false"/>
     <tags category_separator="::"/>
 
@@ -76,7 +75,8 @@
 </map_styles>
 </hook>
 <hook NAME="AutomaticEdgeColor" COUNTER="4" RULE="ON_BRANCH_CREATION"/>
-<node TEXT="ストーリー" POSITION="bottom_or_right" ID="ID_1833053089" CREATED="1792593223464" MODIFIED="1792593242299">
+<node TEXT="ストーリー" POSITION="bottom_or_right" ID="ID_1833053089" CREATED="1792593223464" MODIFIED="1792855617511">
+<icon BUILTIN="button_ok"/>
 <edge COLOR="#ff0000"/>
 <node TEXT="画面を表示する" ID="ID_967560322" CREATED="1792593647972" MODIFIED="1792626867336">
 <icon BUILTIN="button_ok"/>
@@ -92,7 +92,8 @@
 <icon BUILTIN="button_ok"/>
 <node TEXT="食べると+30pt" ID="ID_792874493" CREATED="1792593734721" MODIFIED="1792593743068"/>
 </node>
-<node TEXT="ヘビ" ID="ID_885735169" CREATED="1792593701083" MODIFIED="1792593709644">
+<node TEXT="ヘビ" ID="ID_885735169" CREATED="1792593701083" MODIFIED="1792855505533">
+<icon BUILTIN="button_ok"/>
 <node TEXT="移動" ID="ID_964608164" CREATED="1792593744137" MODIFIED="1792593748485">
 <node TEXT="進行方向に自動移動" ID="ID_158231973" CREATED="1792593798424" MODIFIED="1792794891475">
 <icon BUILTIN="button_ok"/>
@@ -100,14 +101,17 @@
 <node TEXT="方向はキーで変更" ID="ID_1291307655" CREATED="1792593809559" MODIFIED="1792797435378">
 <icon BUILTIN="button_ok"/>
 </node>
-<node TEXT="操作" ID="ID_743235075" CREATED="1792593792704" MODIFIED="1792593795171">
+<node TEXT="操作" ID="ID_743235075" CREATED="1792593792704" MODIFIED="1792855512240">
+<icon BUILTIN="button_ok"/>
 <node TEXT="矢印キー" ID="ID_1080734632" CREATED="1792593749274" MODIFIED="1792797441177">
 <icon BUILTIN="button_ok"/>
 </node>
 <node TEXT="テンキー" ID="ID_1564091249" CREATED="1792593756337" MODIFIED="1792797447086">
 <icon BUILTIN="button_ok"/>
 </node>
-<node TEXT="スマホ用" ID="ID_979909134" CREATED="1792593776688" MODIFIED="1792593786171"/>
+<node TEXT="スマホ用" ID="ID_979909134" CREATED="1792593776688" MODIFIED="1792855509562">
+<icon BUILTIN="button_cancel"/>
+</node>
 </node>
 </node>
 <node TEXT="頭の衝突判定" ID="ID_183452005" CREATED="1792593827663" MODIFIED="1792806058056">
@@ -154,6 +158,21 @@
 <node TEXT="エサを食べる" ID="ID_789493253" CREATED="1792802604458" MODIFIED="1792807805550">
 <icon BUILTIN="button_ok"/>
 <node TEXT="30" OBJECT="java.lang.Integer|30" ID="ID_1750080589" CREATED="1792802610241" MODIFIED="1792802614532"/>
+</node>
+</node>
+</node>
+<node TEXT="表示" ID="ID_1830267943" CREATED="1792855522158" MODIFIED="1792855606071">
+<icon BUILTIN="button_ok"/>
+<node TEXT="終了時カーソルをゲーム画面下にする" ID="ID_531481008" CREATED="1792855525862" MODIFIED="1792855602658">
+<icon BUILTIN="button_ok"/>
+</node>
+<node TEXT="ゲーム中カーソルを非表示にする" ID="ID_826352818" CREATED="1792855549462" MODIFIED="1792855602659">
+<icon BUILTIN="button_ok"/>
+</node>
+<node TEXT="[Ctrl+C]でゲームを中断し終了する" ID="ID_1528294232" CREATED="1792855564581" MODIFIED="1792855602659">
+<icon BUILTIN="button_ok"/>
+<node TEXT="カーソルを再表示する" ID="ID_478517015" CREATED="1792855586925" MODIFIED="1792855602659">
+<icon BUILTIN="button_ok"/>
 </node>
 </node>
 </node>
@@ -214,14 +233,10 @@
 <node TEXT="要求仕様" POSITION="top_or_left" ID="ID_1954653293" CREATED="1792593225904" MODIFIED="1792593230404">
 <edge COLOR="#0000ff"/>
 <node TEXT="画面内のヘビを操作してエサを沢山たべる" ID="ID_1870387205" CREATED="1792593483785" MODIFIED="1792593508282"/>
-<node TEXT="壁か自分に触れたらゲームオーバー" ID="ID_1595295984" CREATED="1792593508577" MODIFIED="1792807802887">
-<icon BUILTIN="button_ok"/>
-<icon BUILTIN="button_ok"/>
-</node>
+<node TEXT="壁か自分に触れたらゲームオーバー" ID="ID_1595295984" CREATED="1792593508577" MODIFIED="1792855488733"/>
 <node TEXT="画面" ID="ID_121616646" CREATED="1792593520616" MODIFIED="1792593527091">
 <node TEXT="スコア" ID="ID_1360533919" CREATED="1792593689675" MODIFIED="1792593694358"/>
-<node TEXT="壁" ID="ID_1269174351" CREATED="1792593527400" MODIFIED="1792797443801">
-<icon BUILTIN="button_ok"/>
+<node TEXT="壁" ID="ID_1269174351" CREATED="1792593527400" MODIFIED="1792855492111">
 <node TEXT="21×21" ID="ID_1614464092" CREATED="1792593530903" MODIFIED="1792593536050"/>
 <node TEXT="#" ID="ID_1442210282" CREATED="1792593608397" MODIFIED="1792593610279"/>
 </node>
