@@ -188,7 +188,7 @@ bool IsEat()
 void ShowFood()
 {
     int8_t screen[SCREEN_HEIGHT][SCREEN_WIDTH];
-    PosArrayIterator iterator = PosArray_Iterator(snake->Body);
+    PosIterator iterator = PosArray_Iterator(snake->Body);
     Pos* position = NULL;
 
     // へびのいる位置を配列に格納

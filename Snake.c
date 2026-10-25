@@ -127,7 +127,7 @@ void Snake_Move(
     Snake* this)                         //!< [I]thisポインタ
 {
     bool isTop = true;
-    PosArrayIterator iterator = PosArray_Iterator(this->Body);
+    PosIterator iterator = PosArray_Iterator(this->Body);
     Pos* position;
     Pos  bfPosition;
     Pos  nowPosition;
@@ -229,7 +229,7 @@ bool Snake_Collision(
     Snake* this)                        //!< [I]thisポインタ
 {
     bool isTop = true;
-    PosArrayIterator iterator = PosArray_Iterator(this->Body);
+    PosIterator iterator = PosArray_Iterator(this->Body);
     Pos* position;
     Pos  headPosition;
 

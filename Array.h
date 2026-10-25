@@ -14,51 +14,36 @@
  *   typedef struct Pos { int X; int Y; } Pos;
  *   ARRAY(Pos);
  *
- * これにより PosArray / PosArrayIterator 型と、次の関数が使えます。
- *   PosArray_New()                  配列を作成（失敗時は NULL）
- *   array->Push(array, &value)      値を末尾に追加（成功時 true）
- *   array->Clear(array)             要素領域を解放し、空の配列にする
- *   PosArray_Delete(array)          配列と要素領域を解放
+ * これにより PosArray / PosIterator 型と、次の関数が使えます。
+ *   <PosArray用関数>
+ *     ・PosArray_New()                  配列を作成（失敗時は NULL）
+ *     ・PosArray_Delete(array)          配列と要素領域を解放
+ *     ・array->Push(array, &value)      値を末尾に追加（成功時 true）
+ *     ・array->Clear(array)             要素領域を解放し、空の配列にする
+ *   <PosIterator用関数>
+ *     ・PosArray_Iterator(array)        イテレーターを作成
+ *     ・iterator->Next(iterator)        次の要素を取り出す
  *
- * Push は value が指す値を配列内にコピーします。value の領域自体は
- * 配列には保存されません。配列を使い終えたら Delete してください。
- * Clear の後も配列オブジェクトは引き続き使用できます。
- *
- * 反復処理の例:
- *   PosArrayIterator it = PosArray_Iterator(array);
+ * イテレータの使用例:
+ *   PosIterator it = PosIterator(array);
  *   const Pos* value;
  *   while ((value = it.Next(&it)) != NULL)
  *   {
  *       // value は現在の要素を指す
  *   }
  *
- * Next は次の要素へのポインタを返し、終端または無効なイテレータでは
- * NULL を返します。返されたポインタは読み取り専用です。反復中は配列を
- * Clear/Delete したり、Push で再確保が起こる可能性のある変更をしないで
- * ください。
  */
 #define ARRAY(Type) \
-    typedef struct Type##Array Type##Array; \
-    typedef struct Type##ArrayIterator Type##ArrayIterator; \
-    static inline bool Type##Array##_Push(Type##Array* array, Type* value); \
-    static inline void Type##Array##_Clear(Type##Array* array); \
-    static inline Type* Type##ArrayIterator##_Next(Type##ArrayIterator* iterator); \
-    \
-    struct Type##Array \
+    typedef struct Type##Array \
     { \
-        Type* Data; \
+        Type*  Data; \
         size_t Length; \
         size_t Capacity; \
-        bool (*Push)(Type##Array* this, Type* value); \
-        void (*Clear)(Type##Array* this); \
-    }; \
-    \
-    typedef struct Type##ArrayIterator \
-    { \
-        Type##Array* Array; \
-        size_t Index; \
-        Type* (*Next)(Type##ArrayIterator* this); \
-    } Type##ArrayIterator; \
+        bool (*Push)(struct Type##Array* this, Type* value); \
+        void (*Clear)(struct Type##Array* this); \
+    }Type##Array; \
+    static inline bool Type##Array##_Push(Type##Array* this, Type* value); \
+    static inline void Type##Array##_Clear(Type##Array* this); \
     \
     static inline Type##Array* Type##Array##_New(void) \
     { \
@@ -70,7 +55,7 @@
         array->Data = NULL; \
         array->Length = 0; \
         array->Capacity = 0; \
-        array->Push = Type##Array##_Push; \
+        array->Push  = Type##Array##_Push; \
         array->Clear = Type##Array##_Clear; \
         array->Clear(array); \
         return array; \
@@ -121,19 +106,31 @@
         } \
     } \
     \
-    static inline Type##ArrayIterator Type##Array##_Iterator(Type##Array* array) \
+    typedef struct Type##Iterator \
     { \
-        Type##ArrayIterator iterator = { array, 0, Type##ArrayIterator##_Next }; \
+        Type##Array* Array; \
+        size_t Index; \
+        Type* (*Next)(struct Type##Iterator* this); \
+    } Type##Iterator; \
+    static inline Type* Type##Iterator_Next(Type##Iterator* this); \
+    \
+    static inline Type##Iterator Type##Array_Iterator(Type##Array* array) \
+    { \
+        Type##Iterator iterator = { array, 0, Type##Iterator##_Next }; \
         return iterator; \
     } \
     \
-    static inline Type* Type##ArrayIterator##_Next(Type##ArrayIterator* iterator) \
+    static inline Type* Type##Iterator##_Next(Type##Iterator* iterator) \
     { \
-        if (iterator == NULL || iterator->Array == NULL || \
-            iterator->Index >= iterator->Array->Length) \
+        if (iterator == NULL || iterator->Array == NULL) \
+        { \
+            return NULL; \
+        }\
+        else if (iterator->Index >= iterator->Array->Length) \
         { \
             return NULL; \
         } \
         return &iterator->Array->Data[iterator->Index++]; \
     }
 #endif
+    
