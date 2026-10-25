@@ -115,21 +115,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_food_8h.html'
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_draw_object_8h_source.html">DrawObject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_game_obj_8h_source.html">GameObj.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Food.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_food_8h__incl.png" border="0" usemap="#a_e_1_2_develop_2_c_2snake_2_food_8h" loading="lazy" alt=""/></div>
 <map name="a_e_1_2_develop_2_c_2snake_2_food_8h" id="a_e_1_2_develop_2_c_2snake_2_food_8h">
-<area shape="rect" title=" " alt="" coords="14,5,154,48"/>
-<area shape="rect" title=" " alt="" coords="5,171,70,197"/>
-<area shape="poly" title=" " alt="" coords="81,48,48,156,43,155,75,48"/>
-<area shape="rect" href="_draw_object_8h.html" title=" " alt="" coords="79,96,180,123"/>
-<area shape="poly" title=" " alt="" coords="96,46,118,82,112,83,95,51"/>
-<area shape="poly" title=" " alt="" coords="116,123,67,163,63,159,111,124"/>
-<area shape="rect" title=" " alt="" coords="94,171,168,197"/>
-<area shape="poly" title=" " alt="" coords="132,121,133,156,128,154,128,125"/>
-<area shape="rect" title=" " alt="" coords="192,171,275,197"/>
-<area shape="poly" title=" " alt="" coords="148,121,206,161,200,162,147,126"/>
+<area shape="rect" title=" " alt="" coords="5,5,145,48"/>
+<area shape="rect" title=" " alt="" coords="43,171,107,197"/>
+<area shape="poly" title=" " alt="" coords="51,51,36,71,21,97,19,109,21,122,33,141,49,159,44,161,29,145,17,124,13,109,17,95,31,68,53,46"/>
+<area shape="rect" href="_draw_object_8h.html" title=" " alt="" coords="143,96,244,123"/>
+<area shape="poly" title=" " alt="" coords="106,46,165,86,160,88,105,51"/>
+<area shape="rect" href="_game_obj_8h.html" title=" " alt="" coords="31,96,119,123"/>
+<area shape="poly" title=" " alt="" coords="76,46,78,81,72,80,74,51"/>
+<area shape="poly" title=" " alt="" coords="176,123,110,165,107,160,170,124"/>
+<area shape="rect" title=" " alt="" coords="143,171,218,197"/>
+<area shape="poly" title=" " alt="" coords="193,121,188,157,183,154,189,125"/>
+<area shape="rect" title=" " alt="" coords="241,171,325,197"/>
+<area shape="poly" title=" " alt="" coords="210,121,258,161,253,161,208,126"/>
+<area shape="poly" title=" " alt="" coords="77,121,78,156,72,154,73,125"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -161,14 +165,12 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a813d41033a3c5a04604c4677d91ad577" id="r_a813d41033a3c5a04604c4677d91ad577"><td class="memItemLeft"><a class="el" href="struct_food.html">Food</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a813d41033a3c5a04604c4677d91ad577">Food_New</a> (<a class="el" href="struct_draw_object.html">DrawObject</a> *drawObj, int32_t width, int32_t height, int32_t ofstx, int32_t ofsty)</td></tr>
 <tr class="memdesc:a813d41033a3c5a04604c4677d91ad577"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
-<tr class="memitem:a5ee457277f4fb2d3ecaf45ce94f0b62c" id="r_a5ee457277f4fb2d3ecaf45ce94f0b62c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5ee457277f4fb2d3ecaf45ce94f0b62c">Food_Delete</a> (<a class="el" href="struct_food.html">Food</a> *this)</td></tr>
-<tr class="memdesc:a5ee457277f4fb2d3ecaf45ce94f0b62c"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <br /></td></tr>
-<tr class="memitem:a8c63ab6cba8fe3e264734a6c315c3b7f" id="r_a8c63ab6cba8fe3e264734a6c315c3b7f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8c63ab6cba8fe3e264734a6c315c3b7f">Food_Arrival</a> (<a class="el" href="struct_food.html">Food</a> *this)</td></tr>
-<tr class="memdesc:a8c63ab6cba8fe3e264734a6c315c3b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">エサ登場  <br /></td></tr>
-<tr class="memitem:a9241e8a0d15116f3d1a6e685fe79c2c4" id="r_a9241e8a0d15116f3d1a6e685fe79c2c4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9241e8a0d15116f3d1a6e685fe79c2c4">Food_Draw</a> (<a class="el" href="struct_food.html">Food</a> *this)</td></tr>
-<tr class="memdesc:a9241e8a0d15116f3d1a6e685fe79c2c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">エサ表示  <br /></td></tr>
-<tr class="memitem:a5a2347c19cda276cf923325f76526d11" id="r_a5a2347c19cda276cf923325f76526d11"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5a2347c19cda276cf923325f76526d11">Food_Disappear</a> (<a class="el" href="struct_food.html">Food</a> *this)</td></tr>
-<tr class="memdesc:a5a2347c19cda276cf923325f76526d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">エサ消失  <br /></td></tr>
+<tr class="memitem:af675321ca0511be172fed1a96eb69cb0" id="r_af675321ca0511be172fed1a96eb69cb0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af675321ca0511be172fed1a96eb69cb0">Food_Delete</a> (<a class="el" href="struct_game_obj.html">GameObj</a> *obj)</td></tr>
+<tr class="memdesc:af675321ca0511be172fed1a96eb69cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <br /></td></tr>
+<tr class="memitem:a7daf3c7f5f26a808713a448f3a75b36b" id="r_a7daf3c7f5f26a808713a448f3a75b36b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7daf3c7f5f26a808713a448f3a75b36b">Food_Update</a> (<a class="el" href="struct_game_obj.html">GameObj</a> *obj)</td></tr>
+<tr class="memdesc:a7daf3c7f5f26a808713a448f3a75b36b"><td class="mdescLeft">&#160;</td><td class="mdescRight">エサ登場  <br /></td></tr>
+<tr class="memitem:a057453a014dd177d0f499369a2b7d54b" id="r_a057453a014dd177d0f499369a2b7d54b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a057453a014dd177d0f499369a2b7d54b">Food_Draw</a> (<a class="el" href="struct_game_obj.html">GameObj</a> *obj)</td></tr>
+<tr class="memdesc:a057453a014dd177d0f499369a2b7d54b"><td class="mdescLeft">&#160;</td><td class="mdescRight">エサ表示  <br /></td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="a22976c3c75c52134e22f6aeda75b6721" name="a22976c3c75c52134e22f6aeda75b6721"></a>
@@ -189,48 +191,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a8c63ab6cba8fe3e264734a6c315c3b7f" name="a8c63ab6cba8fe3e264734a6c315c3b7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c63ab6cba8fe3e264734a6c315c3b7f">&#9670;&#160;</a></span>Food_Arrival()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Food_Arrival </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_food.html">Food</a> *</td>          <td class="paramname"><span class="paramname"><em>this</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>エサ登場 </p>
-<p>エサをランダムな位置に設定する </p><dl class="section return"><dt>Returns</dt><dd>無し </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">this</td><td>[I]thisポインタ </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_food_8c_source.html#l00064">64</a> of file <a class="el" href="_food_8c_source.html">Food.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
-<div class="line"><span class="lineno">   67</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> randomSeeded = 0;</div>
-<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span> (!randomSeeded)</div>
-<div class="line"><span class="lineno">   69</span>    {</div>
-<div class="line"><span class="lineno">   70</span>        srand((<span class="keywordtype">unsigned</span>)time(NULL));</div>
-<div class="line"><span class="lineno">   71</span>        randomSeeded = 1;</div>
-<div class="line"><span class="lineno">   72</span>    }</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>    <span class="comment">// 壁とスコアの表示を考慮し、X+1, Y+2 する</span></div>
-<div class="line"><span class="lineno">   75</span>    this-&gt;X = (rand() % this-&gt;Width)  + this-&gt;OfstX;</div>
-<div class="line"><span class="lineno">   76</span>    this-&gt;Y = (rand() % this-&gt;Height) + this-&gt;OfstY;</div>
-<div class="line"><span class="lineno">   77</span>}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a5ee457277f4fb2d3ecaf45ce94f0b62c" name="a5ee457277f4fb2d3ecaf45ce94f0b62c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ee457277f4fb2d3ecaf45ce94f0b62c">&#9670;&#160;</a></span>Food_Delete()</h2>
+<a id="af675321ca0511be172fed1a96eb69cb0" name="af675321ca0511be172fed1a96eb69cb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af675321ca0511be172fed1a96eb69cb0">&#9670;&#160;</a></span>Food_Delete()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -238,7 +200,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void Food_Delete </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_food.html">Food</a> *</td>          <td class="paramname"><span class="paramname"><em>this</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_game_obj.html">GameObj</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -246,73 +208,28 @@ Functions</h2></td></tr>
 
 <p>デストラクタ </p>
 <p>エサオブジェクト解放 </p><dl class="section return"><dt>Returns</dt><dd>無し </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_food_8c_source.html#l00049">49</a> of file <a class="el" href="_food_8c_source.html">Food.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (<span class="keyword">this</span> == NULL)</div>
-<div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   55</span>    }</div>
-<div class="line"><span class="lineno">   56</span>    free(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   57</span>}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00244">main()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="_food_8h_a5ee457277f4fb2d3ecaf45ce94f0b62c_icgraph.png" border="0" usemap="#a_food_8h_a5ee457277f4fb2d3ecaf45ce94f0b62c_icgraph" loading="lazy" alt=""/></div>
-<map name="a_food_8h_a5ee457277f4fb2d3ecaf45ce94f0b62c_icgraph" id="a_food_8h_a5ee457277f4fb2d3ecaf45ce94f0b62c_icgraph">
-<area shape="rect" title="デストラクタ" alt="" coords="103,5,198,32"/>
-<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="メイン処理" alt="" coords="5,5,55,32"/>
-<area shape="poly" title=" " alt="" coords="85,20,55,21,55,16,90,18"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a5a2347c19cda276cf923325f76526d11" name="a5a2347c19cda276cf923325f76526d11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a2347c19cda276cf923325f76526d11">&#9670;&#160;</a></span>Food_Disappear()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Food_Disappear </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_food.html">Food</a> *</td>          <td class="paramname"><span class="paramname"><em>this</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>エサ消失 </p>
-<p>エサを消す </p><dl class="section return"><dt>Returns</dt><dd>無し </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">this</td><td>[I]thisポインタ </td></tr>
+    <tr><td class="paramname">obj</td><td>[I]親オブジェクト </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_food_8c_source.html#l00109">109</a> of file <a class="el" href="_food_8c_source.html">Food.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  111</span>{</div>
-<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">if</span> ( (<span class="keyword">this</span> == NULL) || </div>
-<div class="line"><span class="lineno">  113</span>         (this-&gt;DrawObj == NULL) || </div>
-<div class="line"><span class="lineno">  114</span>         (this-&gt;DrawObj-&gt;Output == INVALID_HANDLE_VALUE) )</div>
-<div class="line"><span class="lineno">  115</span>    {</div>
-<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  117</span>    }</div>
-<div class="line"><span class="lineno">  118</span> </div>
-<div class="line"><span class="lineno">  119</span>    <span class="comment">// エサ消去</span></div>
-<div class="line"><span class="lineno">  120</span>    this-&gt;DrawObj-&gt;PutChar(this-&gt;DrawObj, this-&gt;X, this-&gt;Y, <span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><span class="lineno">  121</span>    this-&gt;X = -1;</div>
-<div class="line"><span class="lineno">  122</span>    this-&gt;Y = -1;</div>
-<div class="line"><span class="lineno">  123</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_food_8c_source.html#l00050">50</a> of file <a class="el" href="_food_8c_source.html">Food.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>{</div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_struct" href="struct_food.html">Food</a>* <span class="keyword">this</span> = (<a class="code hl_struct" href="struct_food.html">Food</a>*)obj;</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (<span class="keyword">this</span> == NULL)</div>
+<div class="line"><span class="lineno">   55</span>    {</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="line"><span class="lineno">   58</span>    free(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   59</span>}</div>
+<div class="ttc" id="astruct_food_html"><div class="ttname"><a href="struct_food.html">Food</a></div><div class="ttdoc">エサ</div><div class="ttdef"><b>Definition</b> <a href="_food_8h_source.html#l00012">Food.h:13</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a9241e8a0d15116f3d1a6e685fe79c2c4" name="a9241e8a0d15116f3d1a6e685fe79c2c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9241e8a0d15116f3d1a6e685fe79c2c4">&#9670;&#160;</a></span>Food_Draw()</h2>
+<a id="a057453a014dd177d0f499369a2b7d54b" name="a057453a014dd177d0f499369a2b7d54b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a057453a014dd177d0f499369a2b7d54b">&#9670;&#160;</a></span>Food_Draw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,7 +237,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void Food_Draw </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_food.html">Food</a> *</td>          <td class="paramname"><span class="paramname"><em>this</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_game_obj.html">GameObj</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -330,29 +247,30 @@ Here is the caller graph for this function:</div>
 <p>X,Y座標にエサを表示する </p><dl class="section return"><dt>Returns</dt><dd>無し </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">this</td><td>[I]thisポインタ </td></tr>
+    <tr><td class="paramname">obj</td><td>[I]親オブジェクトポインタ </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_food_8c_source.html#l00084">84</a> of file <a class="el" href="_food_8c_source.html">Food.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   86</span>{</div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span> ( (<span class="keyword">this</span> == NULL) || </div>
-<div class="line"><span class="lineno">   88</span>         (this-&gt;DrawObj == NULL) || </div>
-<div class="line"><span class="lineno">   89</span>         (this-&gt;DrawObj-&gt;Output == INVALID_HANDLE_VALUE) )</div>
-<div class="line"><span class="lineno">   90</span>    {</div>
-<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   92</span>    }</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>    <span class="comment">// エサ座標未設定のため表示しない</span></div>
-<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">if</span>( (this-&gt;X == -1) || (this-&gt;Y == -1) )</div>
-<div class="line"><span class="lineno">   96</span>    {</div>
-<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   98</span>    }</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>    <span class="comment">// エサ表示</span></div>
-<div class="line"><span class="lineno">  101</span>    this-&gt;DrawObj-&gt;PutChar(this-&gt;DrawObj, this-&gt;X, this-&gt;Y, <span class="charliteral">&#39;$&#39;</span>);</div>
-<div class="line"><span class="lineno">  102</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_food_8c_source.html#l00094">94</a> of file <a class="el" href="_food_8c_source.html">Food.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>{</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_struct" href="struct_food.html">Food</a>* <span class="keyword">this</span> = (<a class="code hl_struct" href="struct_food.html">Food</a>*)obj;</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span> ( (<span class="keyword">this</span> == NULL) || </div>
+<div class="line"><span class="lineno">   99</span>         (this-&gt;DrawObj == NULL) || </div>
+<div class="line"><span class="lineno">  100</span>         (this-&gt;DrawObj-&gt;Output == INVALID_HANDLE_VALUE) )</div>
+<div class="line"><span class="lineno">  101</span>    {</div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    <span class="comment">// エサ座標未設定のため表示しない</span></div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">if</span>( (this-&gt;X == -1) || (this-&gt;Y == -1) )</div>
+<div class="line"><span class="lineno">  107</span>    {</div>
+<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  109</span>    }</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>    <span class="comment">// エサ表示</span></div>
+<div class="line"><span class="lineno">  112</span>    this-&gt;DrawObj-&gt;PutChar(this-&gt;DrawObj, this-&gt;X, this-&gt;Y, <span class="charliteral">&#39;$&#39;</span>);</div>
+<div class="line"><span class="lineno">  113</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -416,24 +334,25 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   28</span>        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><span class="lineno">   29</span>    }</div>
 <div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>    this-&gt;Width     = width;</div>
-<div class="line"><span class="lineno">   32</span>    this-&gt;Height    = height;</div>
-<div class="line"><span class="lineno">   33</span>    this-&gt;OfstX     = ofstx;</div>
-<div class="line"><span class="lineno">   34</span>    this-&gt;OfstY     = ofsty;</div>
-<div class="line"><span class="lineno">   35</span>    this-&gt;X         = -1;</div>
-<div class="line"><span class="lineno">   36</span>    this-&gt;Y         = -1;</div>
-<div class="line"><span class="lineno">   37</span>    this-&gt;DrawObj   = drawObj;</div>
-<div class="line"><span class="lineno">   38</span>    this-&gt;Arrival   = <a class="code hl_function" href="_food_8c.html#a8c63ab6cba8fe3e264734a6c315c3b7f">Food_Arrival</a>;</div>
-<div class="line"><span class="lineno">   39</span>    this-&gt;Draw      = <a class="code hl_function" href="_food_8c.html#a9241e8a0d15116f3d1a6e685fe79c2c4">Food_Draw</a>;</div>
-<div class="line"><span class="lineno">   40</span>    this-&gt;Disappear = <a class="code hl_function" href="_food_8c.html#a5a2347c19cda276cf923325f76526d11">Food_Disappear</a>;</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   42</span>}</div>
-<div class="ttc" id="a_food_8c_html_a5a2347c19cda276cf923325f76526d11"><div class="ttname"><a href="_food_8c.html#a5a2347c19cda276cf923325f76526d11">Food_Disappear</a></div><div class="ttdeci">void Food_Disappear(Food *this)</div><div class="ttdoc">エサ消失</div><div class="ttdef"><b>Definition</b> <a href="_food_8c_source.html#l00109">Food.c:109</a></div></div>
-<div class="ttc" id="a_food_8c_html_a8c63ab6cba8fe3e264734a6c315c3b7f"><div class="ttname"><a href="_food_8c.html#a8c63ab6cba8fe3e264734a6c315c3b7f">Food_Arrival</a></div><div class="ttdeci">void Food_Arrival(Food *this)</div><div class="ttdoc">エサ登場</div><div class="ttdef"><b>Definition</b> <a href="_food_8c_source.html#l00064">Food.c:64</a></div></div>
-<div class="ttc" id="a_food_8c_html_a9241e8a0d15116f3d1a6e685fe79c2c4"><div class="ttname"><a href="_food_8c.html#a9241e8a0d15116f3d1a6e685fe79c2c4">Food_Draw</a></div><div class="ttdeci">void Food_Draw(Food *this)</div><div class="ttdoc">エサ表示</div><div class="ttdef"><b>Definition</b> <a href="_food_8c_source.html#l00084">Food.c:84</a></div></div>
-<div class="ttc" id="astruct_food_html"><div class="ttname"><a href="struct_food.html">Food</a></div><div class="ttdoc">エサ</div><div class="ttdef"><b>Definition</b> <a href="_food_8h_source.html#l00011">Food.h:12</a></div></div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_function" href="_game_obj_8c.html#afcb00fb5982bd922082d7b87d4951833">GameObj_Init</a>(&amp;this-&gt;Base);</div>
+<div class="line"><span class="lineno">   32</span>    this-&gt;Width       = width;</div>
+<div class="line"><span class="lineno">   33</span>    this-&gt;Height      = height;</div>
+<div class="line"><span class="lineno">   34</span>    this-&gt;OfstX       = ofstx;</div>
+<div class="line"><span class="lineno">   35</span>    this-&gt;OfstY       = ofsty;</div>
+<div class="line"><span class="lineno">   36</span>    this-&gt;X           = -1;</div>
+<div class="line"><span class="lineno">   37</span>    this-&gt;Y           = -1;</div>
+<div class="line"><span class="lineno">   38</span>    this-&gt;DrawObj     = drawObj;</div>
+<div class="line"><span class="lineno">   39</span>    this-&gt;Base.Update = <a class="code hl_function" href="_food_8c.html#a7daf3c7f5f26a808713a448f3a75b36b">Food_Update</a>;</div>
+<div class="line"><span class="lineno">   40</span>    this-&gt;Base.Draw   = <a class="code hl_function" href="_food_8c.html#a057453a014dd177d0f499369a2b7d54b">Food_Draw</a>;</div>
+<div class="line"><span class="lineno">   41</span>    this-&gt;Base.Delete = <a class="code hl_function" href="_food_8c.html#af675321ca0511be172fed1a96eb69cb0">Food_Delete</a>;</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   43</span>}</div>
+<div class="ttc" id="a_food_8c_html_a057453a014dd177d0f499369a2b7d54b"><div class="ttname"><a href="_food_8c.html#a057453a014dd177d0f499369a2b7d54b">Food_Draw</a></div><div class="ttdeci">void Food_Draw(GameObj *obj)</div><div class="ttdoc">エサ表示</div><div class="ttdef"><b>Definition</b> <a href="_food_8c_source.html#l00094">Food.c:94</a></div></div>
+<div class="ttc" id="a_food_8c_html_a7daf3c7f5f26a808713a448f3a75b36b"><div class="ttname"><a href="_food_8c.html#a7daf3c7f5f26a808713a448f3a75b36b">Food_Update</a></div><div class="ttdeci">void Food_Update(GameObj *obj)</div><div class="ttdoc">エサ登場</div><div class="ttdef"><b>Definition</b> <a href="_food_8c_source.html#l00067">Food.c:67</a></div></div>
+<div class="ttc" id="a_food_8c_html_af675321ca0511be172fed1a96eb69cb0"><div class="ttname"><a href="_food_8c.html#af675321ca0511be172fed1a96eb69cb0">Food_Delete</a></div><div class="ttdeci">void Food_Delete(GameObj *obj)</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition</b> <a href="_food_8c_source.html#l00050">Food.c:50</a></div></div>
+<div class="ttc" id="a_game_obj_8c_html_afcb00fb5982bd922082d7b87d4951833"><div class="ttname"><a href="_game_obj_8c.html#afcb00fb5982bd922082d7b87d4951833">GameObj_Init</a></div><div class="ttdeci">void GameObj_Init(GameObj *this)</div><div class="ttdoc">初期化</div><div class="ttdef"><b>Definition</b> <a href="_game_obj_8c_source.html#l00008">GameObj.c:8</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00244">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00254">main()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -445,6 +364,53 @@ Here is the caller graph for this function:</div>
 </map>
 </div>
 
+</div>
+</div>
+<a id="a7daf3c7f5f26a808713a448f3a75b36b" name="a7daf3c7f5f26a808713a448f3a75b36b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7daf3c7f5f26a808713a448f3a75b36b">&#9670;&#160;</a></span>Food_Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Food_Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_game_obj.html">GameObj</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>エサ登場 </p>
+<p>エサをランダムな位置に設定する </p><dl class="section return"><dt>Returns</dt><dd>無し </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>[I]親オブジェクトポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_food_8c_source.html#l00067">67</a> of file <a class="el" href="_food_8c_source.html">Food.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_struct" href="struct_food.html">Food</a>* <span class="keyword">this</span> = (<a class="code hl_struct" href="struct_food.html">Food</a>*)obj;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span>(<span class="keyword">this</span> == NULL)</div>
+<div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   75</span>    }</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> randomSeeded = 0;</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> (!randomSeeded)</div>
+<div class="line"><span class="lineno">   79</span>    {</div>
+<div class="line"><span class="lineno">   80</span>        srand((<span class="keywordtype">unsigned</span>)time(NULL));</div>
+<div class="line"><span class="lineno">   81</span>        randomSeeded = 1;</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <span class="comment">// 壁とスコアの表示を考慮し、X+1, Y+2 する</span></div>
+<div class="line"><span class="lineno">   85</span>    this-&gt;X = (rand() % this-&gt;Width)  + this-&gt;OfstX;</div>
+<div class="line"><span class="lineno">   86</span>    this-&gt;Y = (rand() % this-&gt;Height) + this-&gt;OfstY;</div>
+<div class="line"><span class="lineno">   87</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

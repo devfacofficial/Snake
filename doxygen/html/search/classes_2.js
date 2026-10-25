@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pos_0',['Pos',['../struct_pos.html',1,'']]]
+  ['gameobj_0',['GameObj',['../struct_game_obj.html',1,'']]]
 ];

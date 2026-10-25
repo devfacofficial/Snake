@@ -141,77 +141,82 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_wall_8c_sourc
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// 壁の幅/高さを設定　フロアを囲うため、+2している</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">this</span>-&gt;Width   = width + 2;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">this</span>-&gt;Height  = height + 2;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">this</span>-&gt;DrawObj = drawObj;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">this</span>-&gt;Show = Wall_Show;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    GameObj_Init(&amp;<span class="keyword">this</span>-&gt;Base);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// 壁の幅/高さを設定　フロアを囲うため、+2している</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">this</span>-&gt;Width       = width + 2;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">this</span>-&gt;Height      = height + 2;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">this</span>-&gt;DrawObj     = drawObj;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">this</span>-&gt;Base.Draw   = Wall_Draw;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">this</span>-&gt;Base.Delete = Wall_Delete;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">//! @brief   デストラクタ</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">//! @details 壁オブジェクト解放</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//! @return  無し</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//!</span></div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="_wall_8h.html#a50d5c6d143835b0a92ee0d56daf4d9cc">   41</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_wall_8h.html#a50d5c6d143835b0a92ee0d56daf4d9cc">Wall_Delete</a>(</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    Wall* <span class="keyword">this</span>)                         <span class="comment">//!&lt; [I]thisポインタ</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">if</span> (<span class="keyword">this</span> == NULL)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    free(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//! @brief   デストラクタ</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">//! @details 壁オブジェクト解放</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">//! @return  無し</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">//!</span></div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="_wall_8h.html#a88fd5bef3af90e084c1e0d6718689e2c">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_wall_8h.html#a88fd5bef3af90e084c1e0d6718689e2c">Wall_Delete</a>(</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    GameObj* obj)                       <span class="comment">//!&lt; [I]親オブジェクトポインタ</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    Wall* <span class="keyword">this</span> = (Wall*)obj;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (<span class="keyword">this</span> == NULL)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    free(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">//! @brief   壁表示</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">//! @details １行開けて、Width / Height 範囲で壁を描画する</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">//! @return  無し</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">//!</span></div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="_wall_8h.html#af33ea50daa2dd1f2f5db421db328fcdc">   56</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_wall_8h.html#af33ea50daa2dd1f2f5db421db328fcdc">Wall_Show</a>(</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    Wall* <span class="keyword">this</span>)                         <span class="comment">//!&lt; [I]thisポインタ</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> ( (<span class="keyword">this</span> == NULL) ||</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>         (<span class="keyword">this</span>-&gt;DrawObj == NULL) ||</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>         (<span class="keyword">this</span>-&gt;DrawObj-&gt;Output == INVALID_HANDLE_VALUE) )</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">// 画面をクリアする</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (system(<span class="stringliteral">&quot;cls&quot;</span>) != 0)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        fputs(<span class="stringliteral">&quot;Failed to execute cls.\n&quot;</span>, stderr);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">// 壁を描画する</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">// 先頭行はスコア描画のため、１行目から描画する</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">for</span> (int32_t y = 1; y &lt; (<span class="keyword">this</span>-&gt;Height+1); y++)</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">for</span> (int32_t x = 0; x &lt; <span class="keyword">this</span>-&gt;Width; x++)</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">if</span> ( (y == 1) || (y == <span class="keyword">this</span>-&gt;Height    ) ||</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                 (x == 0) || (x == <span class="keyword">this</span>-&gt;Width  - 1)    )</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                <span class="keyword">this</span>-&gt;DrawObj-&gt;PutChar(<span class="keyword">this</span>-&gt;DrawObj, x, y, <span class="stringliteral">&#39;#&#39;</span>);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <span class="keyword">this</span>-&gt;DrawObj-&gt;PutChar(<span class="keyword">this</span>-&gt;DrawObj, x, y, <span class="stringliteral">&#39; &#39;</span>);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">//! @brief   壁表示</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">//! @details １行開けて、Width / Height 範囲で壁を描画する</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">//! @return  無し</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">//!</span></div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="_wall_8h.html#ab9bd12a448a05ac1be888d0203e5d852">   60</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_wall_8h.html#ab9bd12a448a05ac1be888d0203e5d852">Wall_Draw</a>(</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    GameObj* obj)                       <span class="comment">//!&lt; [I]親オブジェクトポインタ</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    Wall* <span class="keyword">this</span> = (Wall*)obj;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">if</span> ( (<span class="keyword">this</span> == NULL) ||</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>         (<span class="keyword">this</span>-&gt;DrawObj == NULL) ||</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>         (<span class="keyword">this</span>-&gt;DrawObj-&gt;Output == INVALID_HANDLE_VALUE) )</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// 画面をクリアする</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">if</span> (system(<span class="stringliteral">&quot;cls&quot;</span>) != 0)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        fputs(<span class="stringliteral">&quot;Failed to execute cls.\n&quot;</span>, stderr);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">// 壁を描画する</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">// 先頭行はスコア描画のため、１行目から描画する</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">for</span> (int32_t y = 1; y &lt; (<span class="keyword">this</span>-&gt;Height+1); y++)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">for</span> (int32_t x = 0; x &lt; <span class="keyword">this</span>-&gt;Width; x++)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">if</span> ( (y == 1) || (y == <span class="keyword">this</span>-&gt;Height    ) ||</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                 (x == 0) || (x == <span class="keyword">this</span>-&gt;Width  - 1)    )</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <span class="keyword">this</span>-&gt;DrawObj-&gt;PutChar(<span class="keyword">this</span>-&gt;DrawObj, x, y, <span class="stringliteral">&#39;#&#39;</span>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <span class="keyword">this</span>-&gt;DrawObj-&gt;PutChar(<span class="keyword">this</span>-&gt;DrawObj, x, y, <span class="stringliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
 </div>
-<div class="ttc" id="a_wall_8h_html_a50d5c6d143835b0a92ee0d56daf4d9cc"><div class="ttname"><a href="_wall_8h.html#a50d5c6d143835b0a92ee0d56daf4d9cc">Wall_Delete</a></div><div class="ttdeci">void Wall_Delete(Wall *this)</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00041">Wall.c:41</a></div></div>
 <div class="ttc" id="a_wall_8h_html_a71c5ca30f3399942451a2e032f6cecf2"><div class="ttname"><a href="_wall_8h.html#a71c5ca30f3399942451a2e032f6cecf2">Wall_New</a></div><div class="ttdeci">Wall * Wall_New(DrawObject *drawObj, int32_t width, int32_t height)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00012">Wall.c:12</a></div></div>
-<div class="ttc" id="a_wall_8h_html_af33ea50daa2dd1f2f5db421db328fcdc"><div class="ttname"><a href="_wall_8h.html#af33ea50daa2dd1f2f5db421db328fcdc">Wall_Show</a></div><div class="ttdeci">void Wall_Show(Wall *this)</div><div class="ttdoc">壁表示</div><div class="ttdef"><b>Definition</b> <a href="#l00056">Wall.c:56</a></div></div>
+<div class="ttc" id="a_wall_8h_html_a88fd5bef3af90e084c1e0d6718689e2c"><div class="ttname"><a href="_wall_8h.html#a88fd5bef3af90e084c1e0d6718689e2c">Wall_Delete</a></div><div class="ttdeci">void Wall_Delete(GameObj *obj)</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00044">Wall.c:44</a></div></div>
+<div class="ttc" id="a_wall_8h_html_ab9bd12a448a05ac1be888d0203e5d852"><div class="ttname"><a href="_wall_8h.html#ab9bd12a448a05ac1be888d0203e5d852">Wall_Draw</a></div><div class="ttdeci">void Wall_Draw(GameObj *obj)</div><div class="ttdoc">壁表示</div><div class="ttdef"><b>Definition</b> <a href="#l00060">Wall.c:60</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

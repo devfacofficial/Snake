@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['snake_5fdirection_0',['SNAKE_DIRECTION',['../_snake_8h.html#a7e8ef9a84fee28fa2a1dc1f2ec761676',1,'Snake.h']]]
+  ['obj_5fname_0',['OBJ_NAME',['../main_8c.html#a4bd8d8c00bf653abe02bccc9895c6130',1,'main.c']]]
 ];

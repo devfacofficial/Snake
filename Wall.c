@@ -31,7 +31,7 @@ Wall* Wall_New(
     this->Width       = width + 2;
     this->Height      = height + 2;
     this->DrawObj     = drawObj;
-    this->Base.Draw   = Wall_Show;
+    this->Base.Draw   = Wall_Draw;
     this->Base.Delete = Wall_Delete;
     return this;
 }
@@ -57,7 +57,7 @@ void Wall_Delete(
 //! @details １行開けて、Width / Height 範囲で壁を描画する
 //! @return  無し
 //!
-void Wall_Show(
+void Wall_Draw(
     GameObj* obj)                       //!< [I]親オブジェクトポインタ
 {
     Wall* this = (Wall*)obj;

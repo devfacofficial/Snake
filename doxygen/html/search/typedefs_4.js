@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wall_0',['Wall',['../_wall_8h.html#a388eae3fb750c94c5685341949108e1b',1,'Wall.h']]]
+  ['pos_0',['Pos',['../_snake_8h.html#a1e74595e68c7588392e08118304a6f6c',1,'Snake.h']]]
 ];

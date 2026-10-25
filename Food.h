@@ -11,7 +11,7 @@
 //!
 typedef struct Food
 {
-    GameObj Base;           //!< 親クラス
+    GameObj Base;           //!< 親オブジェクト
     int32_t Width;          //!< 画面幅
     int32_t Height;         //!< 画面高さ
     int32_t X;              //!< エサX

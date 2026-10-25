@@ -123,14 +123,18 @@ Collaboration diagram for Snake:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_snake__coll__graph.png" border="0" usemap="#a_snake_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_snake_coll__map" id="a_snake_coll__map">
-<area shape="rect" title="ヘビ" alt="" coords="21,104,80,131"/>
-<area shape="rect" href="struct_draw_object.html" title="描画オブジェクト" alt="" coords="5,5,96,32"/>
-<area shape="poly" title=" " alt="" coords="53,46,53,104,48,103,48,49"/>
+<area shape="rect" title="ヘビ" alt="" coords="68,104,126,131"/>
+<area shape="rect" href="struct_game_obj.html" title="ゲームオブジェクト基底クラス" alt="" coords="5,5,82,32"/>
+<area shape="poly" title=" " alt="" coords="59,43,93,103,87,104,56,48"/>
+<area shape="rect" href="struct_draw_object.html" title="描画オブジェクト" alt="" coords="106,5,197,32"/>
+<area shape="poly" title=" " alt="" coords="140,45,122,81,107,105,103,102,117,79,136,48"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:ada1fdc3ca080a48d1b1e3ff0dba20b7a" id="r_ada1fdc3ca080a48d1b1e3ff0dba20b7a"><td class="memItemLeft"><a class="el" href="struct_game_obj.html">GameObj</a>&#160;</td><td class="memItemRight"><a class="el" href="#ada1fdc3ca080a48d1b1e3ff0dba20b7a">Base</a></td></tr>
+<tr class="memdesc:ada1fdc3ca080a48d1b1e3ff0dba20b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">親オブジェクト  <br /></td></tr>
 <tr class="memitem:a34d6e4e7e8d5aaaf8e5bb086b9f6b7dc" id="r_a34d6e4e7e8d5aaaf8e5bb086b9f6b7dc"><td class="memItemLeft">int32_t&#160;</td><td class="memItemRight"><a class="el" href="#a34d6e4e7e8d5aaaf8e5bb086b9f6b7dc">Width</a></td></tr>
 <tr class="memdesc:a34d6e4e7e8d5aaaf8e5bb086b9f6b7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">画面幅  <br /></td></tr>
 <tr class="memitem:a57454cdcf18030b0e7e26ca61959abe4" id="r_a57454cdcf18030b0e7e26ca61959abe4"><td class="memItemLeft">int32_t&#160;</td><td class="memItemRight"><a class="el" href="#a57454cdcf18030b0e7e26ca61959abe4">Height</a></td></tr>
@@ -147,36 +151,54 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a3ae2beb01bbfe61b4a97c442cbae111c"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画オブジェクト  <br /></td></tr>
 <tr class="memitem:a90d171be48b5ebdf7de2a2000ca0d3b0" id="r_a90d171be48b5ebdf7de2a2000ca0d3b0"><td class="memItemLeft">PosArray *&#160;</td><td class="memItemRight"><a class="el" href="#a90d171be48b5ebdf7de2a2000ca0d3b0">Body</a></td></tr>
 <tr class="memdesc:a90d171be48b5ebdf7de2a2000ca0d3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ヘビ本体  <br /></td></tr>
-<tr class="memitem:a2c50e1bb4e1e811fcc7a9d734a2a6e67" id="r_a2c50e1bb4e1e811fcc7a9d734a2a6e67"><td class="memItemLeft">void(*)&#160;</td><td class="memItemRight"><a class="el" href="#a2c50e1bb4e1e811fcc7a9d734a2a6e67">Init</a> (struct <a class="el" href="struct_snake.html">Snake</a> *this)</td></tr>
-<tr class="memdesc:a2c50e1bb4e1e811fcc7a9d734a2a6e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化  <br /></td></tr>
-<tr class="memitem:a05db1d63be53aa348a847c69940b9cd2" id="r_a05db1d63be53aa348a847c69940b9cd2"><td class="memItemLeft">void(*)&#160;</td><td class="memItemRight"><a class="el" href="#a05db1d63be53aa348a847c69940b9cd2">Move</a> (struct <a class="el" href="struct_snake.html">Snake</a> *this)</td></tr>
-<tr class="memdesc:a05db1d63be53aa348a847c69940b9cd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">移動  <br /></td></tr>
-<tr class="memitem:ab96e25cc1df929c5fdbd2eace2c7641a" id="r_ab96e25cc1df929c5fdbd2eace2c7641a"><td class="memItemLeft">bool(*)&#160;</td><td class="memItemRight"><a class="el" href="#ab96e25cc1df929c5fdbd2eace2c7641a">AddBody</a> (struct <a class="el" href="struct_snake.html">Snake</a> *this, int32_t x, int32_t y)</td></tr>
-<tr class="memdesc:ab96e25cc1df929c5fdbd2eace2c7641a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ヘビ本体追加  <br /></td></tr>
+<tr class="memitem:aeae4d811853f56cbe92a6f374a53db72" id="r_aeae4d811853f56cbe92a6f374a53db72"><td class="memItemLeft">void(*)&#160;</td><td class="memItemRight"><a class="el" href="#aeae4d811853f56cbe92a6f374a53db72">Init</a> (<a class="el" href="struct_game_obj.html">GameObj</a> *obj)</td></tr>
+<tr class="memdesc:aeae4d811853f56cbe92a6f374a53db72"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化  <br /></td></tr>
+<tr class="memitem:aa5fd240c19dae7f0eb2af687c7cf3bb6" id="r_aa5fd240c19dae7f0eb2af687c7cf3bb6"><td class="memItemLeft">bool(*)&#160;</td><td class="memItemRight"><a class="el" href="#aa5fd240c19dae7f0eb2af687c7cf3bb6">AddBody</a> (<a class="el" href="struct_game_obj.html">GameObj</a> *obj, int32_t x, int32_t y)</td></tr>
+<tr class="memdesc:aa5fd240c19dae7f0eb2af687c7cf3bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ヘビ本体追加  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ヘビ </p>
 <p>ヘビの生成／消去を行う </p>
 
-<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00036">36</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00037">37</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="ab96e25cc1df929c5fdbd2eace2c7641a" name="ab96e25cc1df929c5fdbd2eace2c7641a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab96e25cc1df929c5fdbd2eace2c7641a">&#9670;&#160;</a></span>AddBody</h2>
+<a id="aa5fd240c19dae7f0eb2af687c7cf3bb6" name="aa5fd240c19dae7f0eb2af687c7cf3bb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5fd240c19dae7f0eb2af687c7cf3bb6">&#9670;&#160;</a></span>AddBody</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool(*) Snake::AddBody(struct <a class="el" href="struct_snake.html">Snake</a> *this, int32_t x, int32_t y)</td>
+          <td class="memname">bool(*) Snake::AddBody(<a class="el" href="struct_game_obj.html">GameObj</a> *obj, int32_t x, int32_t y)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>ヘビ本体追加 </p>
 
-<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00048">48</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00049">49</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00072">PlayGame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00082">PlayGame()</a>.</p>
+
+</div>
+</div>
+<a id="ada1fdc3ca080a48d1b1e3ff0dba20b7a" name="ada1fdc3ca080a48d1b1e3ff0dba20b7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1fdc3ca080a48d1b1e3ff0dba20b7a">&#9670;&#160;</a></span>Base</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_game_obj.html">GameObj</a> Snake::Base</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>親オブジェクト </p>
+
+<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00039">39</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00082">PlayGame()</a>.</p>
 
 </div>
 </div>
@@ -194,9 +216,9 @@ Public Attributes</h2></td></tr>
 
 <p>ヘビ本体 </p>
 
-<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00045">45</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00047">47</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00178">IsEat()</a>, and <a class="el" href="main_8c_source.html#l00188">ShowFood()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00188">IsEat()</a>, and <a class="el" href="main_8c_source.html#l00198">ShowFood()</a>.</p>
 
 </div>
 </div>
@@ -214,7 +236,7 @@ Public Attributes</h2></td></tr>
 
 <p>ヘビ進行方向 </p>
 
-<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00042">42</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00044">44</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
 
 </div>
 </div>
@@ -232,7 +254,7 @@ Public Attributes</h2></td></tr>
 
 <p>描画オブジェクト </p>
 
-<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00044">44</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00046">46</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
 
 </div>
 </div>
@@ -250,27 +272,27 @@ Public Attributes</h2></td></tr>
 
 <p>画面高さ </p>
 
-<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00039">39</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00041">41</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
 
 </div>
 </div>
-<a id="a2c50e1bb4e1e811fcc7a9d734a2a6e67" name="a2c50e1bb4e1e811fcc7a9d734a2a6e67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c50e1bb4e1e811fcc7a9d734a2a6e67">&#9670;&#160;</a></span>Init</h2>
+<a id="aeae4d811853f56cbe92a6f374a53db72" name="aeae4d811853f56cbe92a6f374a53db72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeae4d811853f56cbe92a6f374a53db72">&#9670;&#160;</a></span>Init</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(*) Snake::Init(struct <a class="el" href="struct_snake.html">Snake</a> *this)</td>
+          <td class="memname">void(*) Snake::Init(<a class="el" href="struct_game_obj.html">GameObj</a> *obj)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>初期化 </p>
 
-<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00046">46</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00048">48</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00072">PlayGame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00082">PlayGame()</a>.</p>
 
 </div>
 </div>
@@ -288,29 +310,9 @@ Public Attributes</h2></td></tr>
 
 <p>壁衝突 </p>
 
-<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00043">43</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00045">45</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00072">PlayGame()</a>.</p>
-
-</div>
-</div>
-<a id="a05db1d63be53aa348a847c69940b9cd2" name="a05db1d63be53aa348a847c69940b9cd2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05db1d63be53aa348a847c69940b9cd2">&#9670;&#160;</a></span>Move</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void(*) Snake::Move(struct <a class="el" href="struct_snake.html">Snake</a> *this)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>移動 </p>
-
-<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00047">47</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00072">PlayGame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00082">PlayGame()</a>.</p>
 
 </div>
 </div>
@@ -328,7 +330,7 @@ Public Attributes</h2></td></tr>
 
 <p>ヘビ描画位置オフセットX </p>
 
-<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00040">40</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00042">42</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
 
 </div>
 </div>
@@ -346,7 +348,7 @@ Public Attributes</h2></td></tr>
 
 <p>ヘビ描画位置オフセットY </p>
 
-<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00041">41</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00043">43</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
 
 </div>
 </div>
@@ -364,7 +366,7 @@ Public Attributes</h2></td></tr>
 
 <p>画面幅 </p>
 
-<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00038">38</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snake_8h_source.html#l00040">40</a> of file <a class="el" href="_snake_8h_source.html">Snake.h</a>.</p>
 
 </div>
 </div>

@@ -19,6 +19,6 @@ typedef struct Wall
 
 Wall* Wall_New(DrawObject* drawObj,int32_t width, int32_t height);
 void  Wall_Delete(GameObj* obj);
-void  Wall_Show(GameObj* obj);
+void  Wall_Draw(GameObj* obj);
 
 #endif

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]]
+  ['iseat_0',['IsEat',['../main_8c.html#ae85fdc0ed84699b2bb13a447390fa5c5',1,'main.c']]],
+  ['isstoprequested_1',['IsStopRequested',['../main_8c.html#a4988599a60a7477356582b64595d7ab2',1,'main.c']]]
 ];

@@ -115,21 +115,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_wall_8h.html'
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_draw_object_8h_source.html">DrawObject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_game_obj_8h_source.html">GameObj.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Wall.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_wall_8h__incl.png" border="0" usemap="#a_e_1_2_develop_2_c_2snake_2_wall_8h" loading="lazy" alt=""/></div>
 <map name="a_e_1_2_develop_2_c_2snake_2_wall_8h" id="a_e_1_2_develop_2_c_2snake_2_wall_8h">
-<area shape="rect" title=" " alt="" coords="14,5,154,48"/>
-<area shape="rect" title=" " alt="" coords="5,171,70,197"/>
-<area shape="poly" title=" " alt="" coords="81,48,48,156,43,155,75,48"/>
-<area shape="rect" href="_draw_object_8h.html" title=" " alt="" coords="79,96,180,123"/>
-<area shape="poly" title=" " alt="" coords="96,46,118,82,112,83,95,51"/>
-<area shape="poly" title=" " alt="" coords="116,123,67,163,63,159,111,124"/>
-<area shape="rect" title=" " alt="" coords="94,171,168,197"/>
-<area shape="poly" title=" " alt="" coords="132,121,133,156,128,154,128,125"/>
-<area shape="rect" title=" " alt="" coords="192,171,275,197"/>
-<area shape="poly" title=" " alt="" coords="148,121,206,161,200,162,147,126"/>
+<area shape="rect" title=" " alt="" coords="5,5,145,48"/>
+<area shape="rect" title=" " alt="" coords="43,171,107,197"/>
+<area shape="poly" title=" " alt="" coords="51,51,36,71,21,97,19,109,21,122,33,141,49,159,44,161,29,145,17,124,13,109,17,95,31,68,53,46"/>
+<area shape="rect" href="_draw_object_8h.html" title=" " alt="" coords="143,96,244,123"/>
+<area shape="poly" title=" " alt="" coords="106,46,165,86,160,88,105,51"/>
+<area shape="rect" href="_game_obj_8h.html" title=" " alt="" coords="31,96,119,123"/>
+<area shape="poly" title=" " alt="" coords="76,46,78,81,72,80,74,51"/>
+<area shape="poly" title=" " alt="" coords="176,123,110,165,107,160,170,124"/>
+<area shape="rect" title=" " alt="" coords="143,171,218,197"/>
+<area shape="poly" title=" " alt="" coords="193,121,188,157,183,154,189,125"/>
+<area shape="rect" title=" " alt="" coords="241,171,325,197"/>
+<area shape="poly" title=" " alt="" coords="210,121,258,161,253,161,208,126"/>
+<area shape="poly" title=" " alt="" coords="77,121,78,156,72,154,73,125"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -161,10 +165,10 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a71c5ca30f3399942451a2e032f6cecf2" id="r_a71c5ca30f3399942451a2e032f6cecf2"><td class="memItemLeft"><a class="el" href="struct_wall.html">Wall</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a71c5ca30f3399942451a2e032f6cecf2">Wall_New</a> (<a class="el" href="struct_draw_object.html">DrawObject</a> *drawObj, int32_t width, int32_t height)</td></tr>
 <tr class="memdesc:a71c5ca30f3399942451a2e032f6cecf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
-<tr class="memitem:a50d5c6d143835b0a92ee0d56daf4d9cc" id="r_a50d5c6d143835b0a92ee0d56daf4d9cc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a50d5c6d143835b0a92ee0d56daf4d9cc">Wall_Delete</a> (<a class="el" href="struct_wall.html">Wall</a> *this)</td></tr>
-<tr class="memdesc:a50d5c6d143835b0a92ee0d56daf4d9cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <br /></td></tr>
-<tr class="memitem:af33ea50daa2dd1f2f5db421db328fcdc" id="r_af33ea50daa2dd1f2f5db421db328fcdc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af33ea50daa2dd1f2f5db421db328fcdc">Wall_Show</a> (<a class="el" href="struct_wall.html">Wall</a> *this)</td></tr>
-<tr class="memdesc:af33ea50daa2dd1f2f5db421db328fcdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">壁表示  <br /></td></tr>
+<tr class="memitem:a88fd5bef3af90e084c1e0d6718689e2c" id="r_a88fd5bef3af90e084c1e0d6718689e2c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a88fd5bef3af90e084c1e0d6718689e2c">Wall_Delete</a> (<a class="el" href="struct_game_obj.html">GameObj</a> *obj)</td></tr>
+<tr class="memdesc:a88fd5bef3af90e084c1e0d6718689e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <br /></td></tr>
+<tr class="memitem:ab9bd12a448a05ac1be888d0203e5d852" id="r_ab9bd12a448a05ac1be888d0203e5d852"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab9bd12a448a05ac1be888d0203e5d852">Wall_Draw</a> (<a class="el" href="struct_game_obj.html">GameObj</a> *obj)</td></tr>
+<tr class="memdesc:ab9bd12a448a05ac1be888d0203e5d852"><td class="mdescLeft">&#160;</td><td class="mdescRight">壁表示  <br /></td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="a388eae3fb750c94c5685341949108e1b" name="a388eae3fb750c94c5685341949108e1b"></a>
@@ -185,8 +189,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a50d5c6d143835b0a92ee0d56daf4d9cc" name="a50d5c6d143835b0a92ee0d56daf4d9cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50d5c6d143835b0a92ee0d56daf4d9cc">&#9670;&#160;</a></span>Wall_Delete()</h2>
+<a id="a88fd5bef3af90e084c1e0d6718689e2c" name="a88fd5bef3af90e084c1e0d6718689e2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88fd5bef3af90e084c1e0d6718689e2c">&#9670;&#160;</a></span>Wall_Delete()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +198,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void Wall_Delete </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_wall.html">Wall</a> *</td>          <td class="paramname"><span class="paramname"><em>this</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_game_obj.html">GameObj</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -204,32 +208,84 @@ Functions</h2></td></tr>
 <p>壁オブジェクト解放 </p><dl class="section return"><dt>Returns</dt><dd>無し </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">this</td><td>[I]thisポインタ </td></tr>
+    <tr><td class="paramname">obj</td><td>[I]親オブジェクトポインタ </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_wall_8c_source.html#l00041">41</a> of file <a class="el" href="_wall_8c_source.html">Wall.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (<span class="keyword">this</span> == NULL)</div>
-<div class="line"><span class="lineno">   45</span>    {</div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
-<div class="line"><span class="lineno">   48</span>    free(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   49</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_wall_8c_source.html#l00044">44</a> of file <a class="el" href="_wall_8c_source.html">Wall.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_struct" href="struct_wall.html">Wall</a>* <span class="keyword">this</span> = (<a class="code hl_struct" href="struct_wall.html">Wall</a>*)obj;</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">if</span> (<span class="keyword">this</span> == NULL)</div>
+<div class="line"><span class="lineno">   49</span>    {</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   51</span>    }</div>
+<div class="line"><span class="lineno">   52</span>    free(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   53</span>}</div>
+<div class="ttc" id="astruct_wall_html"><div class="ttname"><a href="struct_wall.html">Wall</a></div><div class="ttdoc">壁</div><div class="ttdef"><b>Definition</b> <a href="_wall_8h_source.html#l00012">Wall.h:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00244">main()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="_wall_8h_a50d5c6d143835b0a92ee0d56daf4d9cc_icgraph.png" border="0" usemap="#a_wall_8h_a50d5c6d143835b0a92ee0d56daf4d9cc_icgraph" loading="lazy" alt=""/></div>
-<map name="a_wall_8h_a50d5c6d143835b0a92ee0d56daf4d9cc_icgraph" id="a_wall_8h_a50d5c6d143835b0a92ee0d56daf4d9cc_icgraph">
-<area shape="rect" title="デストラクタ" alt="" coords="103,5,194,32"/>
-<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="メイン処理" alt="" coords="5,5,55,32"/>
-<area shape="poly" title=" " alt="" coords="85,20,55,21,55,16,90,18"/>
-</map>
 </div>
+</div>
+<a id="ab9bd12a448a05ac1be888d0203e5d852" name="ab9bd12a448a05ac1be888d0203e5d852"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9bd12a448a05ac1be888d0203e5d852">&#9670;&#160;</a></span>Wall_Draw()</h2>
 
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Wall_Draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_game_obj.html">GameObj</a> *</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>壁表示 </p>
+<p>１行開けて、Width / Height 範囲で壁を描画する </p><dl class="section return"><dt>Returns</dt><dd>無し </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>[I]親オブジェクトポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_wall_8c_source.html#l00060">60</a> of file <a class="el" href="_wall_8c_source.html">Wall.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>{</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_struct" href="struct_wall.html">Wall</a>* <span class="keyword">this</span> = (<a class="code hl_struct" href="struct_wall.html">Wall</a>*)obj;</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> ( (<span class="keyword">this</span> == NULL) || </div>
+<div class="line"><span class="lineno">   65</span>         (this-&gt;DrawObj == NULL) || </div>
+<div class="line"><span class="lineno">   66</span>         (this-&gt;DrawObj-&gt;Output == INVALID_HANDLE_VALUE) )</div>
+<div class="line"><span class="lineno">   67</span>    {</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <span class="comment">// 画面をクリアする</span></div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> (system(<span class="stringliteral">&quot;cls&quot;</span>) != 0)</div>
+<div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span>        fputs(<span class="stringliteral">&quot;Failed to execute cls.\n&quot;</span>, stderr);</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <span class="comment">// 壁を描画する</span></div>
+<div class="line"><span class="lineno">   79</span>    <span class="comment">// 先頭行はスコア描画のため、１行目から描画する</span></div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">for</span> (int32_t y = 1; y &lt; (this-&gt;Height+1); y++)</div>
+<div class="line"><span class="lineno">   81</span>    {</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">for</span> (int32_t x = 0; x &lt; this-&gt;Width; x++)</div>
+<div class="line"><span class="lineno">   83</span>        {</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">if</span> ( (y == 1) || (y == this-&gt;Height    ) ||</div>
+<div class="line"><span class="lineno">   85</span>                 (x == 0) || (x == this-&gt;Width  - 1)    )</div>
+<div class="line"><span class="lineno">   86</span>            {</div>
+<div class="line"><span class="lineno">   87</span>                this-&gt;DrawObj-&gt;PutChar(this-&gt;DrawObj, x, y, <span class="charliteral">&#39;#&#39;</span>);</div>
+<div class="line"><span class="lineno">   88</span>            }</div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   90</span>            {</div>
+<div class="line"><span class="lineno">   91</span>                this-&gt;DrawObj-&gt;PutChar(this-&gt;DrawObj, x, y, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><span class="lineno">   92</span>            }   </div>
+<div class="line"><span class="lineno">   93</span>        }</div>
+<div class="line"><span class="lineno">   94</span>    }</div>
+<div class="line"><span class="lineno">   95</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a71c5ca30f3399942451a2e032f6cecf2" name="a71c5ca30f3399942451a2e032f6cecf2"></a>
@@ -280,17 +336,21 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   25</span>        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><span class="lineno">   26</span>    }</div>
 <div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>    <span class="comment">// 壁の幅/高さを設定　フロアを囲うため、+2している</span></div>
-<div class="line"><span class="lineno">   29</span>    this-&gt;Width   = width + 2;</div>
-<div class="line"><span class="lineno">   30</span>    this-&gt;Height  = height + 2;</div>
-<div class="line"><span class="lineno">   31</span>    this-&gt;DrawObj = drawObj;</div>
-<div class="line"><span class="lineno">   32</span>    this-&gt;Show = <a class="code hl_function" href="#af33ea50daa2dd1f2f5db421db328fcdc">Wall_Show</a>;</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   34</span>}</div>
-<div class="ttc" id="a_wall_8h_html_af33ea50daa2dd1f2f5db421db328fcdc"><div class="ttname"><a href="#af33ea50daa2dd1f2f5db421db328fcdc">Wall_Show</a></div><div class="ttdeci">void Wall_Show(Wall *this)</div><div class="ttdoc">壁表示</div><div class="ttdef"><b>Definition</b> <a href="_wall_8c_source.html#l00056">Wall.c:56</a></div></div>
-<div class="ttc" id="astruct_wall_html"><div class="ttname"><a href="struct_wall.html">Wall</a></div><div class="ttdoc">壁</div><div class="ttdef"><b>Definition</b> <a href="_wall_8h_source.html#l00011">Wall.h:12</a></div></div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_function" href="_game_obj_8c.html#afcb00fb5982bd922082d7b87d4951833">GameObj_Init</a>(&amp;this-&gt;Base);</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>    <span class="comment">// 壁の幅/高さを設定　フロアを囲うため、+2している</span></div>
+<div class="line"><span class="lineno">   31</span>    this-&gt;Width       = width + 2;</div>
+<div class="line"><span class="lineno">   32</span>    this-&gt;Height      = height + 2;</div>
+<div class="line"><span class="lineno">   33</span>    this-&gt;DrawObj     = drawObj;</div>
+<div class="line"><span class="lineno">   34</span>    this-&gt;Base.Draw   = <a class="code hl_function" href="#ab9bd12a448a05ac1be888d0203e5d852">Wall_Draw</a>;</div>
+<div class="line"><span class="lineno">   35</span>    this-&gt;Base.Delete = <a class="code hl_function" href="#a88fd5bef3af90e084c1e0d6718689e2c">Wall_Delete</a>;</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   37</span>}</div>
+<div class="ttc" id="a_game_obj_8c_html_afcb00fb5982bd922082d7b87d4951833"><div class="ttname"><a href="_game_obj_8c.html#afcb00fb5982bd922082d7b87d4951833">GameObj_Init</a></div><div class="ttdeci">void GameObj_Init(GameObj *this)</div><div class="ttdoc">初期化</div><div class="ttdef"><b>Definition</b> <a href="_game_obj_8c_source.html#l00008">GameObj.c:8</a></div></div>
+<div class="ttc" id="a_wall_8h_html_a88fd5bef3af90e084c1e0d6718689e2c"><div class="ttname"><a href="#a88fd5bef3af90e084c1e0d6718689e2c">Wall_Delete</a></div><div class="ttdeci">void Wall_Delete(GameObj *obj)</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition</b> <a href="_wall_8c_source.html#l00044">Wall.c:44</a></div></div>
+<div class="ttc" id="a_wall_8h_html_ab9bd12a448a05ac1be888d0203e5d852"><div class="ttname"><a href="#ab9bd12a448a05ac1be888d0203e5d852">Wall_Draw</a></div><div class="ttdeci">void Wall_Draw(GameObj *obj)</div><div class="ttdoc">壁表示</div><div class="ttdef"><b>Definition</b> <a href="_wall_8c_source.html#l00060">Wall.c:60</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00244">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00254">main()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -302,67 +362,6 @@ Here is the caller graph for this function:</div>
 </map>
 </div>
 
-</div>
-</div>
-<a id="af33ea50daa2dd1f2f5db421db328fcdc" name="af33ea50daa2dd1f2f5db421db328fcdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af33ea50daa2dd1f2f5db421db328fcdc">&#9670;&#160;</a></span>Wall_Show()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Wall_Show </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_wall.html">Wall</a> *</td>          <td class="paramname"><span class="paramname"><em>this</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>壁表示 </p>
-<p>１行開けて、Width / Height 範囲で壁を描画する </p><dl class="section return"><dt>Returns</dt><dd>無し </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">this</td><td>[I]thisポインタ </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_wall_8c_source.html#l00056">56</a> of file <a class="el" href="_wall_8c_source.html">Wall.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>{</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> ( (<span class="keyword">this</span> == NULL) || </div>
-<div class="line"><span class="lineno">   60</span>         (this-&gt;DrawObj == NULL) || </div>
-<div class="line"><span class="lineno">   61</span>         (this-&gt;DrawObj-&gt;Output == INVALID_HANDLE_VALUE) )</div>
-<div class="line"><span class="lineno">   62</span>    {</div>
-<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   64</span>    }</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>    <span class="comment">// 画面をクリアする</span></div>
-<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (system(<span class="stringliteral">&quot;cls&quot;</span>) != 0)</div>
-<div class="line"><span class="lineno">   68</span>    {</div>
-<div class="line"><span class="lineno">   69</span>        fputs(<span class="stringliteral">&quot;Failed to execute cls.\n&quot;</span>, stderr);</div>
-<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   71</span>    }</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>    <span class="comment">// 壁を描画する</span></div>
-<div class="line"><span class="lineno">   74</span>    <span class="comment">// 先頭行はスコア描画のため、１行目から描画する</span></div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">for</span> (int32_t y = 1; y &lt; (this-&gt;Height+1); y++)</div>
-<div class="line"><span class="lineno">   76</span>    {</div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">for</span> (int32_t x = 0; x &lt; this-&gt;Width; x++)</div>
-<div class="line"><span class="lineno">   78</span>        {</div>
-<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">if</span> ( (y == 1) || (y == this-&gt;Height    ) ||</div>
-<div class="line"><span class="lineno">   80</span>                 (x == 0) || (x == this-&gt;Width  - 1)    )</div>
-<div class="line"><span class="lineno">   81</span>            {</div>
-<div class="line"><span class="lineno">   82</span>                this-&gt;DrawObj-&gt;PutChar(this-&gt;DrawObj, x, y, <span class="charliteral">&#39;#&#39;</span>);</div>
-<div class="line"><span class="lineno">   83</span>            }</div>
-<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   85</span>            {</div>
-<div class="line"><span class="lineno">   86</span>                this-&gt;DrawObj-&gt;PutChar(this-&gt;DrawObj, x, y, <span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><span class="lineno">   87</span>            }   </div>
-<div class="line"><span class="lineno">   88</span>        }</div>
-<div class="line"><span class="lineno">   89</span>    }</div>
-<div class="line"><span class="lineno">   90</span>}</div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

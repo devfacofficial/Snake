@@ -1,8 +1,6 @@
 var struct_food =
 [
-    [ "Arrival", "struct_food.html#a61c0e0e9c6f736a93ddef62ecd6e6bd0", null ],
-    [ "Disappear", "struct_food.html#a9a20f54e993965df3976fab820d4e649", null ],
-    [ "Draw", "struct_food.html#abbe915789d5b2422bb65de0f591907cd", null ],
+    [ "Base", "struct_food.html#ace2543fb8edb15c740a98d2ab7063a34", null ],
     [ "DrawObj", "struct_food.html#ab84ae14570b298a12e32635ea97bc503", null ],
     [ "Height", "struct_food.html#ac287b1179707267774c9661507c54961", null ],
     [ "OfstX", "struct_food.html#a147aa838b8f103e277f48f295bb18a44", null ],

@@ -1,5 +1,7 @@
 <map id="Wall" name="Wall">
-<area shape="rect" id="Node000001" title="壁" alt="" coords="27,104,74,131"/>
-<area shape="rect" id="Node000002" href="$struct_draw_object.html" title="描画オブジェクト" alt="" coords="5,5,96,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,46,53,104,48,103,48,49"/>
+<area shape="rect" id="Node000001" title="壁" alt="" coords="74,104,120,131"/>
+<area shape="rect" id="Node000002" href="$struct_game_obj.html" title="ゲームオブジェクト基底クラス" alt="" coords="5,5,82,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,43,93,103,87,104,56,48"/>
+<area shape="rect" id="Node000003" href="$struct_draw_object.html" title="描画オブジェクト" alt="" coords="106,5,197,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,45,122,81,107,105,103,102,117,79,136,48"/>
 </map>
