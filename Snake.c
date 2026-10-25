@@ -81,7 +81,7 @@ void Snake_Init(
     this->Body = PosArray_New();
     if (this->Body == NULL)
     {
-        free(this);
+        return;
     }
 
     this->Direction       = RIGHT;
