@@ -74,10 +74,10 @@ void PlayGame()
     while(!IsStopRequested())
     {
         // 壁表示
-        wall->Show(wall);
+        wall->Base.Draw(&wall->Base);
 
         // へび初期化
-        snake->Init(snake);
+        snake->Init(&snake->Base);
 
         // えさ表示
         ShowFood();
@@ -89,8 +89,8 @@ void PlayGame()
         while( (snake->IsCollisionWall == false) && (!IsStopRequested()) )
         {
             // へび移動
-            food->Draw(food);
-            snake->Move(snake);
+            food->Base.Draw(&food->Base);
+            snake->Base.Draw(&snake->Base);
 
             // 障害物または体に衝突
             if(snake->IsCollisionWall == true)
@@ -110,7 +110,7 @@ void PlayGame()
                 ShowFood();
 
                 // へびの体を１個追加
-                snake->AddBody(snake, -1, -1);
+                snake->AddBody(&snake->Base, -1, -1);
             }
             Sleep(250);
         }
@@ -203,7 +203,7 @@ void ShowFood()
     }
 
     // えさの位置決め
-    food->Arrival(food);
+    food->Arrival(&food->Base);
 
     // えさがへびと重なっていたら、空いてる場所に移動
     if(screen[food->Y - 2][food->X - 1] == 1)
@@ -221,7 +221,7 @@ void ShowFood()
         }
     }
 
-    food->Draw(food);
+    food->Base.Draw(&food->Base);
 }
 
 //-----------------------------------------------------------------------------
@@ -316,9 +316,9 @@ END:
         ShowErrorMsg(__LINE__, (const int8_t*)__func__);
     }
 
-    if(wall != NULL)Wall_Delete(wall);
-    if(food != NULL)Food_Delete(food);
-    if(snake != NULL)Snake_Delete(snake);
+    if(wall != NULL)Wall_Delete(&wall->Base);
+    if(food != NULL)Food_Delete(&food->Base);
+    if(snake != NULL)Snake_Delete(&snake->Base);
     if(drawObject != NULL)DrawObject_Delete(drawObject);
     return 0;
 }

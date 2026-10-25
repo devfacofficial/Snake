@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include "Array.h"
 #include "DrawObject.h"
+#include "GameObj.h"
 
 //-----------------------------------------------------------------------------
 //! @brief   座標
@@ -35,6 +36,7 @@ typedef enum SNAKE_DIRECTION
 //!
 typedef struct Snake
 {
+    GameObj         Base;               //!< 親オブジェクト
     int32_t         Width;              //!< 画面幅
     int32_t         Height;             //!< 画面高さ
     int32_t         OfstX;              //!< ヘビ描画位置オフセットX
@@ -43,17 +45,17 @@ typedef struct Snake
     bool            IsCollisionWall;    //!< 壁衝突
     DrawObject*     DrawObj;            //!< 描画オブジェクト
     PosArray*       Body;               //!< ヘビ本体
-    void (*Init)(struct Snake* this);                           //!< 初期化
-    void (*Move)(struct Snake* this);                           //!< 移動
-    bool (*AddBody)(struct Snake* this, int32_t x, int32_t y);  //!< ヘビ本体追加
+    void (*Init)(GameObj* obj);         //!< 初期化
+    bool (*AddBody)(GameObj* obj, int32_t x, int32_t y);//!< ヘビ本体追加
 } Snake;
 
 Snake* Snake_New(DrawObject* drawObj, int32_t width, int32_t height, int32_t ofstx, int32_t ofsty);
-void   Snake_Delete(Snake* this);
-void   Snake_Init(Snake* this);
-void   Snake_Move(Snake* this);
+void   Snake_Delete(GameObj* obj);
+void   Snake_Init(GameObj* obj);
+void   Snake_Draw(GameObj* obj);
+bool   Snake_AddBody(GameObj* obj, int32_t x, int32_t y);
+
 void   Snake_ChangeDirection(Snake* this);
 bool   Snake_Collision(Snake* this);
-bool   Snake_AddBody(Snake* this, int32_t x, int32_t y);
 bool   Snake_GetNextHeadPos(Snake* this, Pos* pNextHead);
 #endif

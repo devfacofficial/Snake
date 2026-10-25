@@ -28,6 +28,8 @@ Snake* Snake_New(
         return NULL;
     }
 
+    GameObj_Init(&this->Base);
+
     this->Width           = width;
     this->Height          = height;
     this->OfstX           = ofstx;
@@ -37,8 +39,9 @@ Snake* Snake_New(
     this->DrawObj         = drawObj;
     this->Body            = NULL;
     this->Init            = Snake_Init;
-    this->Move            = Snake_Move;
     this->AddBody         = Snake_AddBody;
+    this->Base.Draw       = Snake_Draw;
+    this->Base.Delete     = Snake_Delete;
     return this;
 }
 
@@ -48,8 +51,9 @@ Snake* Snake_New(
 //! @return  無し
 //!
 void Snake_Delete(
-    Snake* this)                        //!< [I]thisポインタ
+    GameObj* obj)                      //!< [I]親オブジェクトポインタ
 {
+    Snake* this = (Snake*)obj;
     if (this == NULL)
     {
         return;
@@ -65,8 +69,9 @@ void Snake_Delete(
 //! @return  無し
 //!
 void Snake_Init(
-    Snake* this)                        //!< [I]thisポインタ
+    GameObj* obj)                       //!< [I]親オブジェクトポインタ
 {
+    Snake* this = (Snake*)obj;
     if (this == NULL)
     {
         return;
@@ -90,13 +95,13 @@ void Snake_Init(
     // へびの初期状態を設定
     int32_t x = 4 + this->OfstX;
     int32_t y = (this->Height / 2) + this->OfstY;
-    Snake_AddBody(this, x, y);
+    Snake_AddBody(&this->Base, x, y);
     x--;
-    Snake_AddBody(this, x, y);
+    Snake_AddBody(&this->Base, x, y);
     x--;
-    Snake_AddBody(this, x, y);
+    Snake_AddBody(&this->Base, x, y);
     x--;
-    Snake_AddBody(this, x, y);
+    Snake_AddBody(&this->Base, x, y);
 }
 
 //-----------------------------------------------------------------------------
@@ -105,10 +110,11 @@ void Snake_Init(
 //! @return  true:追加成功 false:追加失敗
 //!
 bool Snake_AddBody(
-    Snake* this,                        //!< [I]thisポインタ
+    GameObj* obj,                       //!< [I]親オブジェクトポインタ
     int32_t x,                          //!< [I]追加位置X
     int32_t y)                          //!< [I]追加位置Y
 {
+    Snake* this = (Snake*)obj;
     if (this == NULL || this->Body == NULL)
     {
         return false;
@@ -118,14 +124,16 @@ bool Snake_AddBody(
     return this->Body->Push(this->Body, &position);
 }
 
+
 //-----------------------------------------------------------------------------
 //! @brief   へび移動
 //! @details へびを頭の方角に移動
 //! @return  無し
 //!
-void Snake_Move(
-    Snake* this)                         //!< [I]thisポインタ
+void Snake_Draw(
+    GameObj* obj)                       //!< [I]親オブジェクトポインタ
 {
+    Snake* this = (Snake*)obj;
     bool isTop = true;
     PosIterator iterator = PosArray_Iterator(this->Body);
     Pos* position;

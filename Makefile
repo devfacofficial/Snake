@@ -4,8 +4,8 @@ LDFLAGS ?=
 LDLIBS ?= -lm
 
 TARGET = snake.exe
-OBJECTS = main.o DrawObject.o Wall.o Food.o Snake.o
-HEADERS = DrawObject.h Wall.h Food.h Snake.h Array.h
+OBJECTS = main.o DrawObject.o GameObj.o Wall.o Food.o Snake.o
+HEADERS = DrawObject.h GameObj.h Wall.h Food.h Snake.h Array.h
 
 .PHONY: all clean
 
@@ -18,6 +18,9 @@ $(TARGET): $(OBJECTS)
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c -o $@ main.c
+
+GameObj.o: GameObj.c
+	$(CC) $(CFLAGS) -c -o $@ GameObj.c
 
 DrawObject.o: DrawObject.c
 	$(CC) $(CFLAGS) -c -o $@ DrawObject.c

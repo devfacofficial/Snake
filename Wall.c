@@ -25,11 +25,14 @@ Wall* Wall_New(
         return NULL;
     }
 
+    GameObj_Init(&this->Base);
+
     // 壁の幅/高さを設定　フロアを囲うため、+2している
-    this->Width   = width + 2;
-    this->Height  = height + 2;
-    this->DrawObj = drawObj;
-    this->Show = Wall_Show;
+    this->Width       = width + 2;
+    this->Height      = height + 2;
+    this->DrawObj     = drawObj;
+    this->Base.Draw   = Wall_Show;
+    this->Base.Delete = Wall_Delete;
     return this;
 }
 
@@ -39,8 +42,9 @@ Wall* Wall_New(
 //! @return  無し
 //!
 void Wall_Delete(
-    Wall* this)                         //!< [I]thisポインタ
+    GameObj* obj)                       //!< [I]親オブジェクトポインタ
 {
+    Wall* this = (Wall*)obj;
     if (this == NULL)
     {
         return;
@@ -54,8 +58,9 @@ void Wall_Delete(
 //! @return  無し
 //!
 void Wall_Show(
-    Wall* this)                         //!< [I]thisポインタ
+    GameObj* obj)                       //!< [I]親オブジェクトポインタ
 {
+    Wall* this = (Wall*)obj;
     if ( (this == NULL) || 
          (this->DrawObj == NULL) || 
          (this->DrawObj->Output == INVALID_HANDLE_VALUE) )
@@ -88,4 +93,3 @@ void Wall_Show(
         }
     }
 }
- 

@@ -28,16 +28,17 @@ Food* Food_New(
         return NULL;
     }
 
-    this->Width     = width;
-    this->Height    = height;
-    this->OfstX     = ofstx;
-    this->OfstY     = ofsty;
-    this->X         = -1;
-    this->Y         = -1;
-    this->DrawObj   = drawObj;
-    this->Arrival   = Food_Arrival;
-    this->Draw      = Food_Draw;
-    this->Disappear = Food_Disappear;
+    GameObj_Init(&this->Base);
+    this->Width       = width;
+    this->Height      = height;
+    this->OfstX       = ofstx;
+    this->OfstY       = ofsty;
+    this->X           = -1;
+    this->Y           = -1;
+    this->DrawObj     = drawObj;
+    this->Arrival     = Food_Arrival;
+    this->Base.Draw   = Food_Draw;
+    this->Base.Delete = Food_Delete;
     return this;
 }
 
@@ -47,8 +48,9 @@ Food* Food_New(
 //! @return  無し
 //!
 void Food_Delete(
-    Food* this)
+    GameObj* obj)                       //!< [I]親オブジェクト
 {
+    Food* this = (Food*)obj;
     if (this == NULL)
     {
         return;
@@ -56,14 +58,22 @@ void Food_Delete(
     free(this);
 }
 
+
 //-----------------------------------------------------------------------------
 //! @brief   エサ登場
 //! @details エサをランダムな位置に設定する
 //! @return  無し
 //!
 void Food_Arrival(
-    Food* this)                         //!< [I]thisポインタ
+    GameObj* obj)                       //!< [I]親オブジェクトポインタ
 {
+    Food* this = (Food*)obj;
+
+    if(this == NULL)
+    {
+        return;
+    }
+
     static int randomSeeded = 0;
     if (!randomSeeded)
     {
@@ -82,8 +92,9 @@ void Food_Arrival(
 //! @return  無し
 //!
 void Food_Draw(
-    Food* this)                         //!< [I]thisポインタ
+    GameObj* obj)                       //!< [I]親オブジェクトポインタ
 {
+    Food* this = (Food*)obj;
     if ( (this == NULL) || 
          (this->DrawObj == NULL) || 
          (this->DrawObj->Output == INVALID_HANDLE_VALUE) )
@@ -99,25 +110,4 @@ void Food_Draw(
 
     // エサ表示
     this->DrawObj->PutChar(this->DrawObj, this->X, this->Y, '$');
-}
-
-//-----------------------------------------------------------------------------
-//! @brief   エサ消失
-//! @details エサを消す
-//! @return  無し
-//!
-void Food_Disappear(
-    Food* this)                         //!< [I]thisポインタ
-{
-    if ( (this == NULL) || 
-         (this->DrawObj == NULL) || 
-         (this->DrawObj->Output == INVALID_HANDLE_VALUE) )
-    {
-        return;
-    }
-
-    // エサ消去
-    this->DrawObj->PutChar(this->DrawObj, this->X, this->Y, ' ');
-    this->X = -1;
-    this->Y = -1;
 }
