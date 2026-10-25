@@ -5,9 +5,18 @@
 #include "Wall.h"
 #include "Food.h"
 #include "Snake.h"
+#include "GameObj.h"
 
 #define SCREEN_WIDTH  20
 #define SCREEN_HEIGHT 10
+
+typedef enum OBJ_NAME
+{
+    OBJ_NAME_WALL  = 0,
+    OBJ_NAME_FOOD  = 1,
+    OBJ_NAME_SNAKE = 2,
+    OBJ_NAME_MAX   = 3
+}OBJ_NAME;
 
 DrawObject* drawObject = NULL;
 Wall* wall             = NULL;
@@ -15,6 +24,7 @@ Food* food             = NULL;
 Snake* snake           = NULL;
 int32_t score          = 0;
 bool stopRequested     = false;
+GameObj* GameObjTbl[OBJ_NAME_MAX];
 
 void ShowErrorMsg(uint32_t line, const int8_t* func);
 void PlayGame();
@@ -89,8 +99,8 @@ void PlayGame()
         while( (snake->IsCollisionWall == false) && (!IsStopRequested()) )
         {
             // へび移動
-            food->Base.Draw(&food->Base);
-            snake->Base.Draw(&snake->Base);
+            GameObjTbl[OBJ_NAME_FOOD]->Draw(GameObjTbl[OBJ_NAME_FOOD]);
+            GameObjTbl[OBJ_NAME_SNAKE]->Draw(GameObjTbl[OBJ_NAME_SNAKE]);
 
             // 障害物または体に衝突
             if(snake->IsCollisionWall == true)
@@ -203,7 +213,7 @@ void ShowFood()
     }
 
     // えさの位置決め
-    food->Arrival(&food->Base);
+    food->Base.Update(&food->Base);
 
     // えさがへびと重なっていたら、空いてる場所に移動
     if(screen[food->Y - 2][food->X - 1] == 1)
@@ -270,6 +280,7 @@ int main(void)
         ShowErrorMsg(__LINE__, (const int8_t*)__func__);
         goto END;
     }
+    GameObjTbl[OBJ_NAME_WALL] = (GameObj*)wall;
 
     food = Food_New(drawObject, SCREEN_WIDTH, SCREEN_HEIGHT, 1, 2);
     if(food == NULL)
@@ -277,6 +288,7 @@ int main(void)
         ShowErrorMsg(__LINE__, (const int8_t*)__func__);
         goto END;
     }
+    GameObjTbl[OBJ_NAME_FOOD] = (GameObj*)food;
 
     snake = Snake_New(drawObject, SCREEN_WIDTH, SCREEN_HEIGHT, 1, 2);
     if(snake == NULL)
@@ -284,6 +296,7 @@ int main(void)
         ShowErrorMsg(__LINE__, (const int8_t*)__func__);
         goto END;
     }
+    GameObjTbl[OBJ_NAME_SNAKE] = (GameObj*)snake;
 
     // カーソル消去
     if (!drawObject->HideCursor(drawObject))
@@ -316,9 +329,14 @@ END:
         ShowErrorMsg(__LINE__, (const int8_t*)__func__);
     }
 
-    if(wall != NULL)Wall_Delete(&wall->Base);
-    if(food != NULL)Food_Delete(&food->Base);
-    if(snake != NULL)Snake_Delete(&snake->Base);
+	// オブジェクト解放
+    for(int idx=0; idx<OBJ_NAME_MAX; idx++)
+    {
+        if(GameObjTbl[idx] != NULL)
+        {
+            GameObjTbl[idx]->Delete(GameObjTbl[idx]);
+        }
+    }
     if(drawObject != NULL)DrawObject_Delete(drawObject);
     return 0;
 }

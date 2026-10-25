@@ -36,7 +36,7 @@ Food* Food_New(
     this->X           = -1;
     this->Y           = -1;
     this->DrawObj     = drawObj;
-    this->Arrival     = Food_Arrival;
+    this->Base.Update = Food_Update;
     this->Base.Draw   = Food_Draw;
     this->Base.Delete = Food_Delete;
     return this;
@@ -64,7 +64,7 @@ void Food_Delete(
 //! @details エサをランダムな位置に設定する
 //! @return  無し
 //!
-void Food_Arrival(
+void Food_Update(
     GameObj* obj)                       //!< [I]親オブジェクトポインタ
 {
     Food* this = (Food*)obj;
