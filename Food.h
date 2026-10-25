@@ -19,12 +19,12 @@ typedef struct Food
     int32_t OfstX;          //!< エサ描画位置オフセットX
     int32_t OfstY;          //!< エサ描画位置オフセットY
     DrawObject* DrawObj;    //!< 描画オブジェクト
-    void (*Arrival)(GameObj* this);     //!< エサ登場
+    void (*Arrival)(GameObj* obj);//!< エサ登場
 } Food;
 
 Food* Food_New(DrawObject* drawObj, int32_t width, int32_t height, int32_t ofstx, int32_t ofsty);
-void  Food_Delete(GameObj* this);
-void  Food_Arrival(GameObj* this);
-void  Food_Draw(GameObj* this);
+void  Food_Delete(GameObj* obj);
+void  Food_Arrival(GameObj* obj);
+void  Food_Draw(GameObj* obj);
 
 #endif
